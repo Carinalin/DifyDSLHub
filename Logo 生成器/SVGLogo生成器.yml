@@ -1,0 +1,962 @@
+app:
+  description: ''
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  mode: workflow
+  name: SVGLogo生成器
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/volcengine_maas:0.0.10@ba0a7fc3151e89bf8645cd3abb3ccff971ee59e5b1127efca50b092dbb93bf80
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/x:0.0.4@eaee70ddfad2258caf1de0fd980763f7da03ddd63d8ca211904738c6de403609
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/tongyi:0.0.26@4f1c4ded3d189719b7dd54e9d4e5b26f724f3632f3dfaa299491b42accc112c8
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/deepseek:0.0.5@21408d5c48cd9f18d66b08883d0999fe89e6d049c891324c2229dea23b9665d5
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/zhipuai:0.0.8@42bb5f24edb19cf0f9cdf1c77d5daa40c77f81bb0fd7acd31cb39ae1eff8cb9b
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/minimax:0.0.7@46674b5dc7d196c588892441f924d3a509cf8ba32bd8b14e725003cf1c01a179
+kind: app
+version: 0.3.0
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        image_file_size_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: code
+      id: 1737014291474-source-1737014565681-target
+      source: '1737014291474'
+      sourceHandle: source
+      target: '1737014565681'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: template-transform
+      id: 1737014287710-source-1750164896403-target
+      source: '1737014287710'
+      sourceHandle: source
+      target: '1750164896403'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: template-transform
+        targetType: llm
+      id: 1750164896403-source-1737014291474-target
+      source: '1750164896403'
+      sourceHandle: source
+      target: '1737014291474'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: template-transform
+        targetType: llm
+      id: 1750164896403-source-17502187757980-target
+      source: '1750164896403'
+      sourceHandle: source
+      target: '17502187757980'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: template-transform
+        targetType: llm
+      id: 1750164896403-source-17502187801750-target
+      source: '1750164896403'
+      sourceHandle: source
+      target: '17502187801750'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: template-transform
+        targetType: llm
+      id: 1750164896403-source-17502188178510-target
+      source: '1750164896403'
+      sourceHandle: source
+      target: '17502188178510'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: code
+      id: 17502187757980-source-17502188412840-target
+      source: '17502187757980'
+      sourceHandle: source
+      target: '17502188412840'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: code
+      id: 17502187801750-source-17502188521620-target
+      source: '17502187801750'
+      sourceHandle: source
+      target: '17502188521620'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: code
+      id: 17502188178510-source-17502188541990-target
+      source: '17502188178510'
+      sourceHandle: source
+      target: '17502188541990'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: llm
+      id: 1737014565681-source-1750218910516-target
+      source: '1737014565681'
+      sourceHandle: source
+      target: '1750218910516'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: llm
+      id: 17502188412840-source-1750218910516-target
+      source: '17502188412840'
+      sourceHandle: source
+      target: '1750218910516'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: llm
+      id: 17502188521620-source-1750218910516-target
+      source: '17502188521620'
+      sourceHandle: source
+      target: '1750218910516'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: llm
+      id: 17502188541990-source-1750218910516-target
+      source: '17502188541990'
+      sourceHandle: source
+      target: '1750218910516'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: code
+      id: 1750218910516-source-17502193196470-target
+      source: '1750218910516'
+      sourceHandle: source
+      target: '17502193196470'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: end
+      id: 17502193196470-source-1750219382298-target
+      source: '17502193196470'
+      sourceHandle: source
+      target: '1750219382298'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: template-transform
+        targetType: llm
+      id: 1750164896403-source-17505799537570-target
+      source: '1750164896403'
+      sourceHandle: source
+      target: '17505799537570'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: code
+      id: 17505799537570-source-17505800403950-target
+      source: '17505799537570'
+      sourceHandle: source
+      target: '17505800403950'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: llm
+      id: 17505800403950-source-1750218910516-target
+      source: '17505800403950'
+      sourceHandle: source
+      target: '1750218910516'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        desc: ''
+        selected: false
+        title: 开始
+        type: start
+        variables:
+        - label: 品牌种类
+          max_length: 256
+          options: []
+          required: true
+          type: text-input
+          variable: brand_type
+        - label: 品牌名称
+          max_length: 256
+          options: []
+          required: false
+          type: text-input
+          variable: brand_name
+        - label: 风格偏好
+          max_length: 48
+          options:
+          - 充满活力
+          - 现代简约
+          - 复古怀旧
+          - 科技先进
+          - 奢华复杂
+          - 没有偏好
+          required: true
+          type: select
+          variable: style_preference
+        - label: 配色方案
+          max_length: 48
+          options:
+          - 单色
+          - 渐变
+          - 多色
+          - 都可以
+          required: true
+          type: select
+          variable: color_scheme
+        - label: 目标受众
+          max_length: 256
+          options: []
+          required: false
+          type: text-input
+          variable: target_audio
+        - label: 其他说明
+          max_length: 256
+          options: []
+          required: false
+          type: text-input
+          variable: other
+      height: 220
+      id: '1737014287710'
+      position:
+        x: -124.59136673930976
+        y: 217.2440942232729
+      positionAbsolute:
+        x: -124.59136673930976
+        y: 217.2440942232729
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params: {}
+          mode: chat
+          name: qwen3-235b-a22b
+          provider: langgenius/tongyi/tongyi
+        prompt_template:
+        - id: c3d6f892-cf1f-4930-82b5-3a0d1d388363
+          role: system
+          text: "你是一个专业的 SVG logo 设计师，擅长根据用户需求创建简洁、现代且符合品牌气质的矢量图形。你精通 SVG 代码，能够生成清晰、可缩放的\
+            \ logo，适用于网页、印刷和品牌展示。你的目标是根据用户提供的品牌信息、风格偏好和用途，设计一个独特的 SVG logo，并附上简短的设计理念说明。\n\
+            \n**任务要求**：\n1. 根据用户提供的信息，先深入思考设计理念，再根据设计灵感设计一个 SVG 格式的 logo。\n2. 确保 SVG\
+            \ 代码使用 `viewBox` 属性，支持可缩放显示，代码简介，兼容主流浏览器（避免复杂滤镜或效果，除非用户明确要求）。\n3. logo\
+            \ 设计需符合用户指定的风格和配色，充满创意和细节，不要太过简单。\n4. 输出完整的 SVG 代码，使用 `<svg>` 标签，并确保代码可直接复制到\
+            \ .svg 文件或网页中运行。\n\n**输出格式**：\n以JSON格式返回，返回示例如下：\n{\n \"SVG\": (SVG 代码;\
+            \ type: string),\n \"design_idea\": (设计理念说明; type: string)\n}\n\n**注意事项**：\n\
+            - 优先使用 Web 安全字体（如 Arial, sans-serif）。\n- 将样式直接内联到 SVG 元素上，而不是依赖 <style>标签。\n\
+            - 确保 logo 设计简洁、独特，避免抄袭现有品牌。\n- 如果用户未指定尺寸，默认设计 200x200px 的 SVG，并使用 `viewBox=\"\
+            0 0 200 200\"`。\n- 保持专业和创意，设计需与用户描述的品牌类型有联系。\n- logo 不需要包括品牌名称。\n\n请根据用户提供的需求开始设计！"
+        - id: d1fd2604-2e48-42f3-83fc-5a5c1ebbc8d3
+          role: user
+          text: '{{#1750164896403.output#}}'
+        selected: false
+        title: LLM
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 90
+      id: '1737014291474'
+      position:
+        x: 455.20462223542086
+        y: 287.7916797294622
+      positionAbsolute:
+        x: 455.20462223542086
+        y: 287.7916797294622
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "import json\n\ndef main(text: str) -> dict:\n    json_obj = extract_json_response(text)\n\
+          \    return {\n        \"SVG\": json_obj['SVG'],\n        \"design_idea\"\
+          : json_obj['design_idea']\n    }\n\ndef extract_json_response(text: str)\
+          \ -> dict:\n\n    def extract_json(text):\n        stack = []\n        for\
+          \ i, c in enumerate(text):\n            if c == \"{\":\n               \
+          \ stack.append(c)\n            elif c == \"}\":\n                if not\
+          \ stack:\n                    return text[:i]\n                if c == \"\
+          }\" and stack[-1] == \"{\":\n                    stack.pop()\n         \
+          \           if not stack:\n                        return text[: i + 1]\n\
+          \                else:\n                    return text[:i]\n        return\
+          \ None\n\n    for idx in range(len(text)):\n        if text[idx] == \"{\"\
+          :\n            json_str = extract_json(text[idx:])\n            if json_str:\n\
+          \                return json.loads(json_str)\n"
+        code_language: python3
+        desc: ''
+        outputs:
+          SVG:
+            children: null
+            type: string
+          design_idea:
+            children: null
+            type: string
+        selected: false
+        title: 代码执行
+        type: code
+        variables:
+        - value_selector:
+          - '1737014291474'
+          - text
+          variable: text
+      height: 54
+      id: '1737014565681'
+      position:
+        x: 734.7976279338523
+        y: 287.7916797294622
+      positionAbsolute:
+        x: 734.7976279338523
+        y: 287.7916797294622
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        selected: false
+        template: '1. 品牌类型: {{bt}}, 2. 品牌名称: {{bn}}, 3. 风格偏好: {{sp}}, 4. 配色方案: {{cs}},
+          5. 目标受众: {{ta}}, 6. 其他要求: {{ot}}'
+        title: 模板转换 2
+        type: template-transform
+        variables:
+        - value_selector:
+          - '1737014287710'
+          - brand_type
+          variable: bt
+        - value_selector:
+          - '1737014287710'
+          - brand_name
+          variable: bn
+        - value_selector:
+          - '1737014287710'
+          - style_preference
+          variable: sp
+        - value_selector:
+          - '1737014287710'
+          - color_scheme
+          variable: cs
+        - value_selector:
+          - '1737014287710'
+          - target_audio
+          variable: ta
+        - value_selector:
+          - '1737014287710'
+          - other
+          variable: ot
+      height: 54
+      id: '1750164896403'
+      position:
+        x: 145.61403113123998
+        y: 296.6520017801482
+      positionAbsolute:
+        x: 145.61403113123998
+        y: 296.6520017801482
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params: {}
+          mode: chat
+          name: minimax-text-01
+          provider: langgenius/minimax/minimax
+        prompt_template:
+        - id: c3d6f892-cf1f-4930-82b5-3a0d1d388363
+          role: system
+          text: "你是一个专业的 SVG logo 设计师，擅长根据用户需求创建简洁、现代且符合品牌气质的矢量图形。你精通 SVG 代码，能够生成清晰、可缩放的\
+            \ logo，适用于网页、印刷和品牌展示。你的目标是根据用户提供的品牌信息、风格偏好和用途，设计一个独特的 SVG logo，并附上简短的设计理念说明。\n\
+            \n**任务要求**：\n1. 根据用户提供的信息，先深入思考设计理念，再根据设计灵感设计一个 SVG 格式的 logo。\n2. 确保 SVG\
+            \ 代码使用 `viewBox` 属性，支持可缩放显示，代码简介，兼容主流浏览器（避免复杂滤镜或效果，除非用户明确要求）。\n3. logo\
+            \ 设计需符合用户指定的风格和配色，充满创意和细节，不要太过简单。\n4. 输出完整的 SVG 代码，使用 `<svg>` 标签，并确保代码可直接复制到\
+            \ .svg 文件或网页中运行。\n\n**输出格式**：\n以JSON格式返回，返回示例如下：\n{\n \"SVG\": (SVG 代码;\
+            \ type: string),\n \"design_idea\": (设计理念说明; type: string)\n}\n\n**注意事项**：\n\
+            - 优先使用 Web 安全字体（如 Arial, sans-serif）。\n- 将样式直接内联到 SVG 元素上，而不是依赖 <style>标签。\n\
+            - 确保 logo 设计简洁、独特，避免抄袭现有品牌。\n- 如果用户未指定尺寸，默认设计 200x200px 的 SVG，并使用 `viewBox=\"\
+            0 0 200 200\"`。\n- 保持专业和创意，设计需与用户描述的品牌类型有联系。\n- logo 不需要包括品牌名称。\n\n请根据用户提供的需求开始设计！"
+        - id: d1fd2604-2e48-42f3-83fc-5a5c1ebbc8d3
+          role: user
+          text: '{{#1750164896403.output#}}'
+        selected: false
+        title: LLM (1)
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 90
+      id: '17502187757980'
+      position:
+        x: 455.20462223542086
+        y: 423.51109626691283
+      positionAbsolute:
+        x: 455.20462223542086
+        y: 423.51109626691283
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params: {}
+          mode: chat
+          name: grok-3-beta
+          provider: langgenius/x/x
+        prompt_template:
+        - id: c3d6f892-cf1f-4930-82b5-3a0d1d388363
+          role: system
+          text: "你是一个专业的 SVG logo 设计师，擅长根据用户需求创建简洁、现代且符合品牌气质的矢量图形。你精通 SVG 代码，能够生成清晰、可缩放的\
+            \ logo，适用于网页、印刷和品牌展示。你的目标是根据用户提供的品牌信息、风格偏好和用途，设计一个独特的 SVG logo，并附上简短的设计理念说明。\n\
+            \n**任务要求**：\n1. 根据用户提供的信息，先深入思考设计理念，再根据设计灵感设计一个 SVG 格式的 logo。\n2. 确保 SVG\
+            \ 代码使用 `viewBox` 属性，支持可缩放显示，代码简介，兼容主流浏览器（避免复杂滤镜或效果，除非用户明确要求）。\n3. logo\
+            \ 设计需符合用户指定的风格和配色，充满创意和细节，不要太过简单。\n4. 输出完整的 SVG 代码，使用 `<svg>` 标签，并确保代码可直接复制到\
+            \ .svg 文件或网页中运行。\n\n**输出格式**：\n以JSON格式返回，返回示例如下：\n{\n \"SVG\": (SVG 代码;\
+            \ type: string),\n \"design_idea\": (设计理念说明; type: string)\n}\n\n**注意事项**：\n\
+            - 优先使用 Web 安全字体（如 Arial, sans-serif）。\n- 将样式直接内联到 SVG 元素上，而不是依赖 <style>标签。\n\
+            - 确保 logo 设计简洁、独特，避免抄袭现有品牌。\n- 如果用户未指定尺寸，默认设计 200x200px 的 SVG，并使用 `viewBox=\"\
+            0 0 200 200\"`。\n- 保持专业和创意，设计需与用户描述的品牌类型有联系。\n- logo 不需要包括品牌名称。\n\n请根据用户提供的需求开始设计！"
+        - id: d1fd2604-2e48-42f3-83fc-5a5c1ebbc8d3
+          role: user
+          text: '{{#1750164896403.output#}}'
+        selected: false
+        title: LLM (2)
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 90
+      id: '17502187801750'
+      position:
+        x: 455.20462223542086
+        y: 561.0500982635659
+      positionAbsolute:
+        x: 455.20462223542086
+        y: 561.0500982635659
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params: {}
+          mode: chat
+          name: Doubao-1.5-pro-256k
+          provider: langgenius/volcengine_maas/volcengine_maas
+        prompt_template:
+        - id: c3d6f892-cf1f-4930-82b5-3a0d1d388363
+          role: system
+          text: "你是一个专业的 SVG logo 设计师，擅长根据用户需求创建简洁、现代且符合品牌气质的矢量图形。你精通 SVG 代码，能够生成清晰、可缩放的\
+            \ logo，适用于网页、印刷和品牌展示。你的目标是根据用户提供的品牌信息、风格偏好和用途，设计一个独特的 SVG logo，并附上简短的设计理念说明。\n\
+            \n**任务要求**：\n1. 根据用户提供的信息，先深入思考设计理念，再根据设计灵感设计一个 SVG 格式的 logo。\n2. 确保 SVG\
+            \ 代码使用 `viewBox` 属性，支持可缩放显示，代码简介，兼容主流浏览器（避免复杂滤镜或效果，除非用户明确要求）。\n3. logo\
+            \ 设计需符合用户指定的风格和配色，充满创意和细节，不要太过简单。\n4. 输出完整的 SVG 代码，使用 `<svg>` 标签，并确保代码可直接复制到\
+            \ .svg 文件或网页中运行。\n\n**输出格式**：\n以JSON格式返回，返回示例如下：\n{\n \"SVG\": (SVG 代码;\
+            \ type: string),\n \"design_idea\": (设计理念说明; type: string)\n}\n\n**注意事项**：\n\
+            - 优先使用 Web 安全字体（如 Arial, sans-serif）。\n- 将样式直接内联到 SVG 元素上，而不是依赖 <style>标签。\n\
+            - 确保 logo 设计简洁、独特，避免抄袭现有品牌。\n- 如果用户未指定尺寸，默认设计 200x200px 的 SVG，并使用 `viewBox=\"\
+            0 0 200 200\"`。\n- 保持专业和创意，设计需与用户描述的品牌类型有联系。\n- logo 不需要包括品牌名称。\n\n请根据用户提供的需求开始设计！"
+        - id: d1fd2604-2e48-42f3-83fc-5a5c1ebbc8d3
+          role: user
+          text: '{{#1750164896403.output#}}'
+        selected: false
+        title: LLM (3)
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 90
+      id: '17502188178510'
+      position:
+        x: 455.20462223542086
+        y: 698.5891002602189
+      positionAbsolute:
+        x: 455.20462223542086
+        y: 698.5891002602189
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "import json\n\ndef main(text: str) -> dict:\n    json_obj = extract_json_response(text)\n\
+          \    return {\n        \"SVG\": json_obj['SVG'],\n        \"design_idea\"\
+          : json_obj['design_idea']\n    }\n\ndef extract_json_response(text: str)\
+          \ -> dict:\n\n    def extract_json(text):\n        stack = []\n        for\
+          \ i, c in enumerate(text):\n            if c == \"{\":\n               \
+          \ stack.append(c)\n            elif c == \"}\":\n                if not\
+          \ stack:\n                    return text[:i]\n                if c == \"\
+          }\" and stack[-1] == \"{\":\n                    stack.pop()\n         \
+          \           if not stack:\n                        return text[: i + 1]\n\
+          \                else:\n                    return text[:i]\n        return\
+          \ None\n\n    for idx in range(len(text)):\n        if text[idx] == \"{\"\
+          :\n            json_str = extract_json(text[idx:])\n            if json_str:\n\
+          \                return json.loads(json_str)\n"
+        code_language: python3
+        desc: ''
+        outputs:
+          SVG:
+            children: null
+            type: string
+          design_idea:
+            children: null
+            type: string
+        selected: false
+        title: 代码执行 (1)
+        type: code
+        variables:
+        - value_selector:
+          - '17502187757980'
+          - text
+          variable: text
+      height: 54
+      id: '17502188412840'
+      position:
+        x: 734.7976279338523
+        y: 436.6582067518871
+      positionAbsolute:
+        x: 734.7976279338523
+        y: 436.6582067518871
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "import json\n\ndef main(text: str) -> dict:\n    json_obj = extract_json_response(text)\n\
+          \    return {\n        \"SVG\": json_obj['SVG'],\n        \"design_idea\"\
+          : json_obj['design_idea']\n    }\n\ndef extract_json_response(text: str)\
+          \ -> dict:\n\n    def extract_json(text):\n        stack = []\n        for\
+          \ i, c in enumerate(text):\n            if c == \"{\":\n               \
+          \ stack.append(c)\n            elif c == \"}\":\n                if not\
+          \ stack:\n                    return text[:i]\n                if c == \"\
+          }\" and stack[-1] == \"{\":\n                    stack.pop()\n         \
+          \           if not stack:\n                        return text[: i + 1]\n\
+          \                else:\n                    return text[:i]\n        return\
+          \ None\n\n    for idx in range(len(text)):\n        if text[idx] == \"{\"\
+          :\n            json_str = extract_json(text[idx:])\n            if json_str:\n\
+          \                return json.loads(json_str)\n"
+        code_language: python3
+        desc: ''
+        outputs:
+          SVG:
+            children: null
+            type: string
+          design_idea:
+            children: null
+            type: string
+        selected: false
+        title: 代码执行 (2)
+        type: code
+        variables:
+        - value_selector:
+          - '17502187801750'
+          - text
+          variable: text
+      height: 54
+      id: '17502188521620'
+      position:
+        x: 739.2452080184162
+        y: 572.1745763662364
+      positionAbsolute:
+        x: 739.2452080184162
+        y: 572.1745763662364
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "import json\n\ndef main(text: str) -> dict:\n    json_obj = extract_json_response(text)\n\
+          \    return {\n        \"SVG\": json_obj['SVG'],\n        \"design_idea\"\
+          : json_obj['design_idea']\n    }\n\ndef extract_json_response(text: str)\
+          \ -> dict:\n\n    def extract_json(text):\n        stack = []\n        for\
+          \ i, c in enumerate(text):\n            if c == \"{\":\n               \
+          \ stack.append(c)\n            elif c == \"}\":\n                if not\
+          \ stack:\n                    return text[:i]\n                if c == \"\
+          }\" and stack[-1] == \"{\":\n                    stack.pop()\n         \
+          \           if not stack:\n                        return text[: i + 1]\n\
+          \                else:\n                    return text[:i]\n        return\
+          \ None\n\n    for idx in range(len(text)):\n        if text[idx] == \"{\"\
+          :\n            json_str = extract_json(text[idx:])\n            if json_str:\n\
+          \                return json.loads(json_str)\n"
+        code_language: python3
+        desc: ''
+        outputs:
+          SVG:
+            children: null
+            type: string
+          design_idea:
+            children: null
+            type: string
+        selected: false
+        title: 代码执行 (3)
+        type: code
+        variables:
+        - value_selector:
+          - '17502188178510'
+          - text
+          variable: text
+      height: 54
+      id: '17502188541990'
+      position:
+        x: 739.2452080184162
+        y: 716.7927917009524
+      positionAbsolute:
+        x: 739.2452080184162
+        y: 716.7927917009524
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1750164896403'
+          - output
+        desc: ''
+        model:
+          completion_params: {}
+          mode: chat
+          name: deepseek-chat
+          provider: langgenius/deepseek/deepseek
+        prompt_template:
+        - id: aed141e4-9b71-4135-b00a-192e9c47b342
+          role: system
+          text: "你是一位专业的 SVG logo 设计师，擅长以创意和美学为核心打造高质量的视觉标识。用户根据设计需求：{{#context#}}提供了\
+            \ 5 个SVG 设计方案并进行了设计理念说明。请基于用户提供的 5 个设计方案，从以下维度进行全面评估：\n设计创意：方案的独创性、概念深度及与理念的契合度。\n\
+            图案美观度：视觉吸引力、比例协调性及细节精致度。\n技术实现：SVG 代码的规范性、优化程度及跨平台兼容性。\n整体效果：综合观感及品牌传达的有效性。\n\
+            为每个方案打分（0-10 分）。最终，综合分析后推荐一个最优方案。请以专业、客观的视角作出评估。\n\n**输入**：\n1. 方案一：[SVG，设计理念]\n\
+            2. 方案二：[SVG，设计理念]\n3. 方案三：[SVG，设计理念]\n4. 方案四：[SVG，设计理念]\n5. 方案五：[SVG，设计理念]\n\
+            \n**输出**：\n以JSON格式返回，返回示例如下：\n{\n \"score\": (\"方案 1：x 分，方案 2：x 分，方案 3：x\
+            \ 分，方案 4：x 分\"; type: string， 方案 5：x 分\"; type: string),\n \"winner\"\
+            : ( 最终选择的SVG; type: string)\n}"
+        - id: c73a09eb-d8cc-4961-a0df-645963e5bf4a
+          role: user
+          text: '1. 方案一：[{{#1737014565681.SVG#}}，{{#1737014565681.design_idea#}}]
+
+            2. 方案二：{{#17502188412840.SVG#}}，{{#17502188412840.design_idea#}}]
+
+            3. 方案三：[{{#17502188521620.SVG#}}，{{#17502188521620.design_idea#}}]
+
+            4. 方案四：[{{#17502188541990.SVG#}}，{{#17502188541990.design_idea#}}]
+
+            5. 方案五：[{{#17505800403950.SVG#}}，{{#17505800403950.design_idea#}}]'
+        selected: false
+        title: LLM 5
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 90
+      id: '1750218910516'
+      position:
+        x: 1068.9342863339227
+        y: 442.72610389879827
+      positionAbsolute:
+        x: 1068.9342863339227
+        y: 442.72610389879827
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "import json\n\ndef main(text: str) -> dict:\n    json_obj = extract_json_response(text)\n\
+          \    return {\n        \"score\": json_obj['score'],\n        \"winner\"\
+          : json_obj['winner']\n    }\n\ndef extract_json_response(text: str) -> dict:\n\
+          \n    def extract_json(text):\n        stack = []\n        for i, c in enumerate(text):\n\
+          \            if c == \"{\":\n                stack.append(c)\n         \
+          \   elif c == \"}\":\n                if not stack:\n                  \
+          \  return text[:i]\n                if c == \"}\" and stack[-1] == \"{\"\
+          :\n                    stack.pop()\n                    if not stack:\n\
+          \                        return text[: i + 1]\n                else:\n \
+          \                   return text[:i]\n        return None\n\n    for idx\
+          \ in range(len(text)):\n        if text[idx] == \"{\":\n            json_str\
+          \ = extract_json(text[idx:])\n            if json_str:\n               \
+          \ return json.loads(json_str)\n"
+        code_language: python3
+        desc: ''
+        outputs:
+          score:
+            children: null
+            type: string
+          winner:
+            children: null
+            type: string
+        selected: false
+        title: 代码执行 (4)
+        type: code
+        variables:
+        - value_selector:
+          - '1750218910516'
+          - text
+          variable: text
+      height: 54
+      id: '17502193196470'
+      position:
+        x: 1379.1894355782963
+        y: 442.72610389879827
+      positionAbsolute:
+        x: 1379.1894355782963
+        y: 442.72610389879827
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '17502193196470'
+          - winner
+          variable: winner
+        selected: false
+        title: 结束
+        type: end
+      height: 90
+      id: '1750219382298'
+      position:
+        x: 1682.3970408263917
+        y: 442.72610389879827
+      positionAbsolute:
+        x: 1682.3970408263917
+        y: 442.72610389879827
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params: {}
+          mode: chat
+          name: glm-4-0520
+          provider: langgenius/zhipuai/zhipuai
+        prompt_template:
+        - id: c3d6f892-cf1f-4930-82b5-3a0d1d388363
+          role: system
+          text: "你是一个专业的 SVG logo 设计师，擅长根据用户需求创建简洁、现代且符合品牌气质的矢量图形。你精通 SVG 代码，能够生成清晰、可缩放的\
+            \ logo，适用于网页、印刷和品牌展示。你的目标是根据用户提供的品牌信息、风格偏好和用途，设计一个独特的 SVG logo，并附上简短的设计理念说明。\n\
+            \n**任务要求**：\n1. 根据用户提供的信息，先深入思考设计理念，再根据设计灵感设计一个 SVG 格式的 logo。\n2. 确保 SVG\
+            \ 代码使用 `viewBox` 属性，支持可缩放显示，代码简介，兼容主流浏览器（避免复杂滤镜或效果，除非用户明确要求）。\n3. logo\
+            \ 设计需符合用户指定的风格和配色，充满创意和细节，不要太过简单。\n4. 输出完整的 SVG 代码，使用 `<svg>` 标签，并确保代码可直接复制到\
+            \ .svg 文件或网页中运行。\n\n**输出格式**：\n以JSON格式返回，返回示例如下：\n{\n \"SVG\": (SVG 代码;\
+            \ type: string),\n \"design_idea\": (设计理念说明; type: string)\n}\n\n**注意事项**：\n\
+            - 优先使用 Web 安全字体（如 Arial, sans-serif）。\n- 将样式直接内联到 SVG 元素上，而不是依赖 <style>标签。\n\
+            - 确保 logo 设计简洁、独特，避免抄袭现有品牌。\n- 如果用户未指定尺寸，默认设计 200x200px 的 SVG，并使用 `viewBox=\"\
+            0 0 200 200\"`。\n- 保持专业和创意，设计需与用户描述的品牌类型有联系。\n- logo 不需要包括品牌名称。\n\n请根据用户提供的需求开始设计！"
+        - id: d1fd2604-2e48-42f3-83fc-5a5c1ebbc8d3
+          role: user
+          text: '{{#1750164896403.output#}}'
+        selected: false
+        title: LLM (4)
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 90
+      id: '17505799537570'
+      position:
+        x: 455.20462223542086
+        y: 822.5856131543793
+      positionAbsolute:
+        x: 455.20462223542086
+        y: 822.5856131543793
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "import json\n\ndef main(text: str) -> dict:\n    json_obj = extract_json_response(text)\n\
+          \    return {\n        \"SVG\": json_obj['SVG'],\n        \"design_idea\"\
+          : json_obj['design_idea']\n    }\n\ndef extract_json_response(text: str)\
+          \ -> dict:\n\n    def extract_json(text):\n        stack = []\n        for\
+          \ i, c in enumerate(text):\n            if c == \"{\":\n               \
+          \ stack.append(c)\n            elif c == \"}\":\n                if not\
+          \ stack:\n                    return text[:i]\n                if c == \"\
+          }\" and stack[-1] == \"{\":\n                    stack.pop()\n         \
+          \           if not stack:\n                        return text[: i + 1]\n\
+          \                else:\n                    return text[:i]\n        return\
+          \ None\n\n    for idx in range(len(text)):\n        if text[idx] == \"{\"\
+          :\n            json_str = extract_json(text[idx:])\n            if json_str:\n\
+          \                return json.loads(json_str)\n"
+        code_language: python3
+        desc: ''
+        outputs:
+          SVG:
+            children: null
+            type: string
+          design_idea:
+            children: null
+            type: string
+        selected: false
+        title: 代码执行 (4)
+        type: code
+        variables:
+        - value_selector:
+          - '17505799537570'
+          - text
+          variable: text
+      height: 54
+      id: '17505800403950'
+      position:
+        x: 739.2452080184162
+        y: 844.2479746851409
+      positionAbsolute:
+        x: 739.2452080184162
+        y: 844.2479746851409
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    viewport:
+      x: -1372.6344795643245
+      y: -125.70908862804157
+      zoom: 0.9979147819593275

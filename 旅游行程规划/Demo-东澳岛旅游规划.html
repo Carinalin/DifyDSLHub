@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>珠海东澳岛情侣悠闲游攻略</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* 基础样式重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+            background-attachment: fixed;
+        }
+        
+        /* Hero区域样式 */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 600px;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), 
+                        url('https://images.unsplash.com/photo-1505228395891-9a51e7e86bf6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        
+        .hero-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .info-card {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 15px 25px;
+            min-width: 200px;
+        }
+        
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            font-size: 2rem;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+        }
+        
+        /* 内容区域样式 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+        
+        section {
+            margin-bottom: 60px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        section:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, #4facfe, #00f2fe);
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #4facfe;
+            display: inline-block;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            color: #3498db;
+            margin: 25px 0 15px;
+        }
+        
+        /* 表格样式 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        th {
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            color: white;
+            font-weight: 600;
+            text-align: left;
+        }
+        
+        th, td {
+            padding: 16px 20px;
+            border: 1px solid #e1e1e1;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        tr:hover {
+            background-color: #e3f2fd;
+        }
+        
+        /* 列表样式 */
+        ul {
+            padding-left: 25px;
+            margin: 15px 0;
+        }
+        
+        li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+        
+        li:before {
+            content: "•";
+            color: #4facfe;
+            font-weight: bold;
+            display: inline-block; 
+            width: 1em;
+            margin-left: -1em;
+        }
+        
+        /* 卡片样式 */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card h4 {
+            color: #2c3e50;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+        
+        /* 预算样式 */
+        .budget-summary {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        .budget-item {
+            text-align: center;
+            padding: 20px;
+            border-radius: 15px;
+            background: #e3f2fd;
+            min-width: 150px;
+            margin: 10px;
+        }
+        
+        .budget-item .amount {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #3498db;
+        }
+        
+        .total-budget {
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            color: white;
+            font-weight: bold;
+            padding: 25px;
+            text-align: center;
+            border-radius: 15px;
+            margin-top: 30px;
+            font-size: 1.8rem;
+        }
+        
+        /* 页脚样式 */
+        footer {
+            background: linear-gradient(to right, #2c3e50, #4a6582);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 50px;
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* 动画效果 */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.4rem;
+            }
+            
+            .info-card {
+                min-width: 150px;
+                padding: 10px 15px;
+            }
+            
+            section {
+                padding: 25px 20px;
+            }
+            
+            .cards {
+                grid-template-columns: 1fr;
+            }
+            
+            table {
+                font-size: 0.9rem;
+            }
+            
+            th, td {
+                padding: 10px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero区域 -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>珠海东澳岛情侣悠闲游攻略</h1>
+            <div class="hero-subtitle">浪漫海岛之旅 · 专属二人世界</div>
+            
+            <div class="hero-info">
+                <div class="info-card">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>旅行日期</h3>
+                    <p>2025年6月21日 - 6月22日</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>目的地</h3>
+                    <p>珠海东澳岛</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-heart"></i>
+                    <h3>旅行者</h3>
+                    <p>情侣</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-wallet"></i>
+                    <h3>预算</h3>
+                    <p>6000元</p>
+                </div>
+            </div>
+            
+            <a href="#content" class="btn">查看详细攻略</a>
+        </div>
+        
+        <div class="scroll-down" onclick="scrollToContent()">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+    
+    <!-- 内容区域 -->
+    <div id="content" class="container">
+        <!-- 行程概览 -->
+        <section>
+            <h2><i class="fas fa-route"></i> 行程概览</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>日期</th>
+                        <th>主要活动/景点</th>
+                        <th>活动类型</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>6月21日（周六）</td>
+                        <td>从深圳出发，乘船前往东澳岛 ➡️ 入住酒店 ➡️ 午餐 ➡️ 下午游览东澳湾沙滩或蜜月公园 ➡️ 晚餐享用海鲜大餐</td>
+                        <td>抵达+休闲+美食</td>
+                    </tr>
+                    <tr>
+                        <td>6月22日（周日）</td>
+                        <td>早餐 ➡️ 上午游览石景长廊或观海平台 ➡️ 午餐 ➡️ 下午自由活动（可选水上运动或沙滩休闲） ➡️ 乘船返回深圳</td>
+                        <td>自然景观+返程</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <!-- 详细时间表 -->
+        <section>
+            <h2><i class="fas fa-clock"></i> 详细时间表</h2>
+            
+            <h3>6月21日（周六） - 抵达东澳岛并休闲游玩</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>时间</th>
+                        <th>地点/活动</th>
+                        <th>描述与备注</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>08:00 - 10:00</td>
+                        <td>深圳蛇口邮轮中心 ➡️ 东澳岛码头</td>
+                        <td>乘船前往东澳岛，船程约2小时。建议提前购票，票价约150元/人。</td>
+                    </tr>
+                    <tr>
+                        <td>10:00 - 11:00</td>
+                        <td>入住酒店</td>
+                        <td>推荐住宿：<strong>珠海东澳岛可域度假村</strong>或<strong>格力东澳大酒店</strong>，预算约800-1500元/晚。</td>
+                    </tr>
+                    <tr>
+                        <td>11:30 - 13:00</td>
+                        <td>午餐：是旦海鲜餐厅总店</td>
+                        <td>品尝新鲜海鲜，人均约100-150元。</td>
+                    </tr>
+                    <tr>
+                        <td>13:30 - 16:30</td>
+                        <td>游览东澳湾沙滩或蜜月公园</td>
+                        <td>沙滩休闲或浪漫散步，适合情侣。</td>
+                    </tr>
+                    <tr>
+                        <td>18:00 - 20:00</td>
+                        <td>晚餐：东澳湾海鲜餐厅</td>
+                        <td>享用地道海鲜料理，人均约120-180元。</td>
+                    </tr>
+                    <tr>
+                        <td>20:30</td>
+                        <td>返回酒店休息</td>
+                        <td>晚上可在海边散步，享受宁静时光。</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>6月22日（周日） - 游览景点并返程</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>时间</th>
+                        <th>地点/活动</th>
+                        <th>描述与备注</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>07:30 - 09:00</td>
+                        <td>早餐（酒店提供）</td>
+                        <td>酒店内享用早餐。</td>
+                    </tr>
+                    <tr>
+                        <td>09:00 - 11:30</td>
+                        <td>游览石景长廊或观海平台</td>
+                        <td>欣赏独特的石景或观海，适合拍照打卡。</td>
+                    </tr>
+                    <tr>
+                        <td>12:00 - 13:30</td>
+                        <td>午餐：聚鲜海鲜餐厅</td>
+                        <td>品尝海鲜大餐，人均约100-150元。</td>
+                    </tr>
+                    <tr>
+                        <td>14:00 - 16:00</td>
+                        <td>自由活动（可选水上运动或沙滩休闲）</td>
+                        <td>推荐体验水上运动项目（如蓝骑士水上运动中心），或继续沙滩休闲。</td>
+                    </tr>
+                    <tr>
+                        <td>16:30 - 18:30</td>
+                        <td>乘船返回深圳蛇口邮轮中心</td>
+                        <td>船程约2小时，票价约150元/人。</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <!-- 交通信息 -->
+        <section>
+            <h2><i class="fas fa-subway"></i> 交通信息</h2>
+            <ul>
+                <li><strong>深圳 ➡️ 东澳岛</strong>：
+                    <ul>
+                        <li><strong>乘船</strong>：从深圳蛇口邮轮中心乘船前往东澳岛码头，船程约2小时，票价约150元/人。</li>
+                        <li><strong>建议</strong>：提前1-2天购票，避免旺季票源紧张。</li>
+                    </ul>
+                </li>
+                <li><strong>岛内交通</strong>：
+                    <ul>
+                        <li>东澳岛内主要靠步行或电瓶车，部分酒店提供接送服务。</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        
+        <!-- 住宿与餐饮 -->
+        <section>
+            <h2><i class="fas fa-hotel"></i> 住宿与餐饮</h2>
+            
+            <h3>住宿推荐</h3>
+            <div class="cards">
+                <div class="card">
+                    <h4>珠海东澳岛可域度假村</h4>
+                    <p><strong>地址：</strong>东澳岛绿岛路7号</p>
+                    <p><strong>特色：</strong>舒适度假环境，预算约800-1000元/晚。</p>
+                </div>
+                <div class="card">
+                    <h4>格力东澳大酒店</h4>
+                    <p><strong>地址：</strong>万山镇东澳岛绿岛路1号</p>
+                    <p><strong>特色：</strong>高端酒店设施，预算约1200-1500元/晚。</p>
+                </div>
+            </div>
+            
+            <h3>餐饮推荐</h3>
+            <div class="cards">
+                <div class="card">
+                    <h4>是旦海鲜餐厅总店</h4>
+                    <p><strong>地址：</strong>万山镇东澳岛伶仃海岸渔港站1-2号铺</p>
+                    <p><strong>特色：</strong>新鲜海鲜，人均100-150元。</p>
+                </div>
+                <div class="card">
+                    <h4>东澳湾海鲜餐厅</h4>
+                    <p><strong>地址：</strong>玲钉海岸鱼港一楼卡4</p>
+                    <p><strong>特色：</strong>地道海鲜料理，人均120-180元。</p>
+                </div>
+                <div class="card">
+                    <h4>聚鲜海鲜餐厅</h4>
+                    <p><strong>地址：</strong>万山镇东澳岛旅游度假区(东南角)</p>
+                    <p><strong>特色：</strong>海鲜大餐，人均100-150元。</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 景点推荐 -->
+        <section>
+            <h2><i class="fas fa-camera"></i> 景点推荐</h2>
+            <div class="cards">
+                <div class="card">
+                    <h4>东澳湾沙滩</h4>
+                    <p><strong>特色：</strong>细腻的沙滩，适合游泳和日光浴。</p>
+                </div>
+                <div class="card">
+                    <h4>蜜月公园</h4>
+                    <p><strong>特色：</strong>浪漫的蜜月主题公园，适合情侣拍照。</p>
+                </div>
+                <div class="card">
+                    <h4>石景长廊</h4>
+                    <p><strong>特色：</strong>独特的石景景观，适合徒步和拍照。</p>
+                </div>
+                <div class="card">
+                    <h4>观海平台</h4>
+                    <p><strong>特色：</strong>观海绝佳地点，视野开阔。</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 预算摘要 -->
+        <section>
+            <h2><i class="fas fa-calculator"></i> 预算摘要</h2>
+            <div class="budget-summary">
+                <div class="budget-item">
+                    <div class="title">船票（往返）</div>
+                    <div class="amount">¥600</div>
+                    <div class="note">2人</div>
+                </div>
+                <div class="budget-item">
+                    <div class="title">住宿（1晚）</div>
+                    <div class="amount">¥800-1500</div>
+                </div>
+                <div class="budget-item">
+                    <div class="title">餐饮</div>
+                    <div class="amount">¥600-800</div>
+                </div>
+                <div class="budget-item">
+                    <div class="title">景点门票</div>
+                    <div class="amount">¥0</div>
+                    <div class="note">免费</div>
+                </div>
+                <div class="budget-item">
+                    <div class="title">其他</div>
+                    <div class="amount">¥500</div>
+                    <div class="note">水上运动等</div>
+                </div>
+            </div>
+            <div class="total-budget">
+                总计预算：约¥6000元
+            </div>
+        </section>
+        
+        <!-- 实用信息 -->
+        <section>
+            <h2><i class="fas fa-info-circle"></i> 实用信息</h2>
+            <ul>
+                <li><strong>必备物品</strong>：防晒霜、泳衣、帽子、轻便衣物、身份证、现金。</li>
+                <li><strong>注意事项</strong>：
+                    <ul>
+                        <li>提前预订船票和住宿，避免旺季无票或无房。</li>
+                        <li>注意防晒和补水，岛上紫外线较强。</li>
+                        <li>海鲜过敏者需提前告知餐厅。</li>
+                    </ul>
+                </li>
+            </ul>
+            <p class="highlight" style="margin-top: 20px; font-size: 1.3rem; font-style: italic; text-align: center; color: #3498db;">
+                希望这份攻略能让你们的珠海东澳岛之旅轻松愉快！
+            </p>
+        </section>
+    </div>
+    
+    <!-- 页脚 -->
+    <footer>
+        <div class="footer-content">
+            <h3>珠海东澳岛情侣悠闲游攻略</h3>
+            <p>浪漫海岛之旅 · 专属二人世界 · 美好回忆永存</p>
+            <p style="margin-top: 20px;">&copy; 2025 情侣旅行攻略 | 精心策划的浪漫之旅</p>
+        </div>
+    </footer>
+    
+    <script>
+        // 滚动到内容区域
+        function scrollToContent() {
+            document.getElementById('content').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+        
+        // 表格行悬停效果增强
+        document.addEventListener('DOMContentLoaded', function() {
+            const tableRows = document.querySelectorAll('tbody tr');
+            
+            tableRows.forEach(row => {
+                row.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.01)';
+                    this.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+                });
+                
+                row.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1)';
+                    this.style.boxShadow = 'none';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

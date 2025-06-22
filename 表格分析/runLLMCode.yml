@@ -1,0 +1,764 @@
+app:
+  description: ''
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  mode: workflow
+  name: runLLMCode
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/deepseek:0.0.5@21408d5c48cd9f18d66b08883d0999fe89e6d049c891324c2229dea23b9665d5
+kind: app
+version: 0.3.0
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        image_file_size_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        sourceType: start
+        targetType: code
+      id: 1733304372042-source-1733304400929-target
+      selected: false
+      source: '1733304372042'
+      sourceHandle: source
+      target: '1733304400929'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: code
+      id: 1733308734162-source-1733309556954-target
+      selected: false
+      source: '1733308734162'
+      sourceHandle: source
+      target: '1733309556954'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: http-request
+      id: 1733309556954-source-1733305706063-target
+      selected: false
+      source: '1733309556954'
+      sourceHandle: source
+      target: '1733305706063'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: http-request
+        targetType: code
+      id: 1733305706063-source-1733310096303-target
+      selected: false
+      source: '1733305706063'
+      sourceHandle: source
+      target: '1733310096303'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: code
+      id: 1733304400929-source-1733364687479-target
+      selected: false
+      source: '1733304400929'
+      sourceHandle: source
+      target: '1733364687479'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: llm
+      id: 1733364687479-source-1733308734162-target
+      selected: false
+      source: '1733364687479'
+      sourceHandle: source
+      target: '1733308734162'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: llm
+      id: 1750325281135-source-1750325173073-target
+      selected: false
+      source: '1750325281135'
+      sourceHandle: source
+      target: '1750325173073'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: code
+      id: 1750325173073-source-17503261835310-target
+      selected: false
+      source: '1750325173073'
+      sourceHandle: source
+      target: '17503261835310'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: http-request
+      id: 17503261835310-source-17503262188690-target
+      selected: false
+      source: '17503261835310'
+      sourceHandle: source
+      target: '17503262188690'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: http-request
+        targetType: code
+      id: 17503262188690-source-17503262912170-target
+      selected: false
+      source: '17503262188690'
+      sourceHandle: source
+      target: '17503262912170'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: end
+      id: 17503262912170-source-1750326315731-target
+      selected: false
+      source: '17503262912170'
+      sourceHandle: source
+      target: '1750326315731'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: end
+      id: 1733310096303-source-1750326374008-target
+      source: '1733310096303'
+      sourceHandle: source
+      target: '1750326374008'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        desc: ''
+        selected: false
+        title: 开始
+        type: start
+        variables:
+        - allowed_file_extensions: []
+          allowed_file_types:
+          - document
+          - image
+          - audio
+          - video
+          allowed_file_upload_methods:
+          - local_file
+          - remote_url
+          label: File
+          max_length: 48
+          options: []
+          required: true
+          type: file
+          variable: File
+        - label: query
+          max_length: 1000
+          options: []
+          required: true
+          type: paragraph
+          variable: query
+      height: 116
+      id: '1733304372042'
+      position:
+        x: 30
+        y: 258
+      positionAbsolute:
+        x: 30
+        y: 258
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "import os\nimport time\nfrom datetime import datetime, timedelta\n\n\
+          def main(filesize):\n    # 存储符合条件的文件列表\n    matched_files = []\n    \n \
+          \   # 获取当前时间\n    current_time = time.time()\n    \n    # 检查 upload_files\
+          \ 文件夹\n    upload_dir = '/app/api/storage/upload_files'\n    \n    # 确保文件夹存在\n\
+          \    if not os.path.exists(upload_dir):\n        return  {\"file_path\"\
+          :\"None\"}\n    \n    # 递归遍历文件夹中的所有文件\n    for root, dirs, files in os.walk(upload_dir):\n\
+          \        for filename in files:  # 只处理文件，忽略文件夹\n            file_path =\
+          \ os.path.join(root, filename)\n            \n            # 获取文件状态信息\n \
+          \           file_stat = os.stat(file_path)\n            \n            #\
+          \ 获取文件修改时间\n            file_mtime = file_stat.st_mtime\n            \n\
+          \            # 计算文件时间差（分钟）\n            time_diff = (current_time - file_mtime)\
+          \ / 60\n            \n            # 检查文件大小和修改时间是否符合条件\n            if  file_stat.st_size\
+          \ == filesize:\n                matched_files.append((file_path, file_mtime))\n\
+          \n    if matched_files:\n        # 按修改时间排序，取最新的文件\n        newest_file =\
+          \ max(matched_files, key=lambda x: x[1])\n        return {\"file_path\"\
+          :str(newest_file[0])}\n    else:\n        return {\"file_path\":\"None\"\
+          }\n"
+        code_language: python3
+        desc: ''
+        outputs:
+          file_path:
+            children: null
+            type: string
+        selected: false
+        title: 获取文件路径
+        type: code
+        variables:
+        - value_selector:
+          - '1733304372042'
+          - File
+          - size
+          variable: filesize
+      height: 54
+      id: '1733304400929'
+      position:
+        x: 334
+        y: 258
+      positionAbsolute:
+        x: 334
+        y: 258
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data:
+          - id: key-value-707
+            key: ''
+            type: text
+            value: '{"code":{{#1733309556954.code#}},"language":"python3"}'
+          type: json
+        desc: ''
+        headers: X-Api-Key:dify-sandbox
+        method: post
+        params: ''
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 100
+        selected: false
+        ssl_verify: true
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: sandbox 执行代码
+        type: http-request
+        url: http://sandbox:8194/v1/sandbox/run
+        variables: []
+      height: 140
+      id: '1733305706063'
+      position:
+        x: 942
+        y: 543.7142857142858
+      positionAbsolute:
+        x: 942
+        y: 543.7142857142858
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-coder
+          provider: langgenius/deepseek/deepseek
+        prompt_template:
+        - id: fb5ec31d-3aef-4b55-bb45-b5e0910ab916
+          role: system
+          text: '你是一个数据处理专家，擅长需求分析和数据处理，你可以和用户进行基本的对话，习惯使用 pandas 编写代码处理数据处理的需求。
+
+            '
+        - id: ab066e1b-b7c0-4984-991d-fe2972312bd4
+          role: user
+          text: "<UserMessage>\n{{#1733304372042.query#}}\n</UserMessage>\n\n\n##\
+            \ 步骤\n1、首先，根据 xml 标签 <UserMessage></UserMessage> 中的内容，思考这是否是一个数据处理需求？如果这不是处理数据的需求，你可以请求用户澄清需要如何处理数据。如果这是一个数据处理请求，请结合下面的背景信息，给出处理步骤。\n\
+            2、根据处理步骤，使用 pandas 生成代码，无需注释，直接输出代码即可。\n3、csv的数据路径为：{{#1733304400929.file_path#}}\n\
+            4、python代码最终输出的内容为markdown的文本\n\n\n### 背景\n下面我会用 xml 的格式给你提供每个 DataSample\
+            \ 的数据样本。\n\n<DATA>\n    <DataFrame>\n        <DataSample>{{#1733364687479.result#}}</DataSample>\n\
+            \    </DataFrame>\n</DATA>"
+        selected: false
+        title: LLM
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 90
+      id: '1733308734162'
+      position:
+        x: 942
+        y: 258
+      positionAbsolute:
+        x: 942
+        y: 258
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "import re\nimport json\n\ndef main(markdown_text):\n    \"\"\"\n  \
+          \  从Markdown文本中提取Python代码块。\n    :param markdown_text: Markdown内容字符串\n \
+          \   :return: 提取的Python代码列表\n    \"\"\"\n    # 使用正则表达式匹配Markdown中的Python代码块\n\
+          \    code_blocks = re.findall(r'```python(.*?)```', markdown_text, re.DOTALL)\n\
+          \    code_string = [code.strip() for code in code_blocks][0]\n    return\
+          \ {\"code\":json.dumps(code_string)}\n"
+        code_language: python3
+        desc: ''
+        outputs:
+          code:
+            children: null
+            type: string
+        selected: false
+        title: 提取LLM中都代码
+        type: code
+        variables:
+        - value_selector:
+          - '1733308734162'
+          - text
+          variable: markdown_text
+      height: 54
+      id: '1733309556954'
+      position:
+        x: 942
+        y: 423.7142857142857
+      positionAbsolute:
+        x: 942
+        y: 423.7142857142857
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "import json\n\ndef main(response):\n    data= json.loads(response)\n\
+          \    return {\n        \"result\": data['data']['stdout'],\n    }\n"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: 提取输出内容
+        type: code
+        variables:
+        - value_selector:
+          - '1733305706063'
+          - body
+          variable: response
+      height: 54
+      id: '1733310096303'
+      position:
+        x: 942
+        y: 699.0934643990729
+      positionAbsolute:
+        x: 942
+        y: 699.0934643990729
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "import pandas as pd\nfile_path = '{{file_path}}'\ndef main(file_path):\n\
+          \    try:\n        # 读取CSV文件\n        df = pd.read_csv(file_path)\n    \
+          \    \n        # 获取前5行数据作为样本\n        sample_df = df.head()\n        \n\
+          \        # 生成markdown表格\n        markdown = \"### 数据样本预览\\n\\n\"\n     \
+          \   \n        # 添加表头\n        headers = \"|\" + \"|\".join(str(col) for\
+          \ col in sample_df.columns) + \"|\"\n        separator = \"|\" + \"|\".join([\"\
+          ---\" for _ in sample_df.columns]) + \"|\"\n        \n        markdown +=\
+          \ headers + \"\\n\" + separator + \"\\n\"\n        \n        # 添加数据行\n \
+          \       for _, row in sample_df.iterrows():\n            markdown += \"\
+          |\" + \"|\".join(str(val) for val in row.values) + \"|\\n\"\n          \
+          \  \n        # 添加数据集信息\n        markdown += f\"\\n### 数据集信息\\n\"\n     \
+          \   markdown += f\"- 总行数: {len(df)}\\n\"\n        markdown += f\"- 总列数:\
+          \ {len(df.columns)}\\n\"\n        markdown += f\"- 列名: {', '.join(df.columns.tolist())}\\\
+          n\"\n        \n        return {\"result\": markdown}\n        \n    except\
+          \ Exception as e:\n        return {\"result\": f\"错误: {str(e)}\"}"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: 读取csv
+        type: code
+        variables:
+        - value_selector:
+          - '1733304400929'
+          - file_path
+          variable: file_path
+      height: 54
+      id: '1733364687479'
+      position:
+        x: 638
+        y: 258
+      positionAbsolute:
+        x: 638
+        y: 258
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1733310096303'
+          - result
+        desc: ''
+        model:
+          completion_params: {}
+          mode: chat
+          name: deepseek-chat
+          provider: langgenius/deepseek/deepseek
+        prompt_template:
+        - id: 859e77d1-06a7-40f5-959e-088a7b809f6b
+          role: system
+          text: "你是一个 Echart 绘图专家，擅长根据用户提供的Json 数据：{{#context#}}，绘制合适的图表。不管是柱状图、折线图、饼图、条形图，你都非常擅长。你需要执行的步骤如下：\n\
+            1. 理解 Json 数据，决定要使用哪些重要的数据\n2. 根据数据思考要绘制哪种类型的图表\n3. 用 python 写出图表绘制的相关代码\n\
+            \n输出格式：\n以JSON格式返回，返回示例如下：\n{\n \"think\": (思考过程; type: string),\n \"\
+            code\": (```python图表绘制代码```; type: string)\n}\n\n代码示例：折线图和柱状图\n```python\n\
+            import json\nimport random\n\n\ndef main(data):\n    weather_data = json.loads(data)\n\
+            \    field_names = list(weather_data[0].keys())  # 获取字段名列表\n    field_data\
+            \ = {field: [] for field in field_names}  # 使用字段名作为字典的键\n\n\n    # 按字段逐项整理数据\n\
+            \    for item in weather_data:\n        for field in field_names:\n  \
+            \          field_data[field].append(item[field])\n\n\n    # 确保折线图和柱状图严格对应分类轴\
+            \ (X 轴)\n    x_axis_data = field_data[field_names[0]]  # 分类轴数据\n    bar_values\
+            \ = field_data[field_names[1]]  # 柱状图数据\n    line_values = field_data[field_names[1]]\
+            \  # 折线图数据 (保持一致)\n\n\n    # 生成柱状图系列数据\n    bar_colors = [\n        f\"\
+            rgb({random.randint(0, 255)}, {random.randint(0, 255)}, {random.randint(0,\
+            \ 255)})\"\n        for _ in bar_values\n    ]\n    bar_series = {\n \
+            \       \"name\": \"柱状图\",\n        \"type\": \"bar\",\n    \"data\":\
+            \ [\n        {\"value\": value, \"itemStyle\": {\"color\": color}, \"\
+            label\": {\"show\": True, \"position\": \"top\", \"color\": \"#000\"}}\n\
+            \        for value, color in zip(bar_values, bar_colors)\n    ],\n   \
+            \     \"barGap\": \"0%\",  # 禁止柱间间距\n        \"barCategoryGap\": \"50%\"\
+            ,  # 设置分类间距\n    }\n\n\n    # 生成折线图系列数据\n    line_series = {\n       \
+            \ \"name\": \"折线图\",\n        \"type\": \"line\",\n        \"data\": [{\"\
+            value\": value} for value in line_values],  # 与柱状图数据严格对应\n        \"smooth\"\
+            : True,\n        \"lineStyle\": {\n            \"width\": 2\n        },\n\
+            \        \"itemStyle\": {\n            \"color\": f\"rgb({random.randint(0,\
+            \ 255)}, {random.randint(0, 255)}, {random.randint(0, 255)})\"\n     \
+            \   },\n        \"symbolSize\": 8,\n        \"label\": {\n           \
+            \ \"show\": False  # 隐藏折线图标注\n        }\n    }\n\n\n    # ECharts 配置\n\
+            \    echarts_config = {\n        \"title\": {\n            \"text\": \"\
+            最受欢迎的电影\"\n        },\n        \"tooltip\": {\n            \"trigger\"\
+            : \"axis\",\n            \"axisPointer\": {\n                \"type\"\
+            : \"cross\",\n                \"label\": {\n                    \"backgroundColor\"\
+            : \"#6a7985\"\n                }\n            }\n        },\n        \"\
+            legend\": {\n            \"show\": False  # 隐藏图例\n        },\n       \
+            \ \"xAxis\": {\n            \"type\": \"category\",\n            \"data\"\
+            : x_axis_data,  # 分类轴\n            \"axisLabel\": {\n                \"\
+            show\": False  # 隐藏X轴标签\n            }\n        },\n        \"yAxis\"\
+            : {\n            \"type\": \"value\"\n        },\n        \"series\":\
+            \ [bar_series, line_series]  # 合并系列数据\n    }\n\n\n    # 输出结果\n    output\
+            \ = (\n        \"```echarts\\n\" +\n        json.dumps(echarts_config,\
+            \ indent=2, ensure_ascii=False) +\n        \"\\n```\"\n    )\n    return\
+            \ {\"output\": output}\n```"
+        selected: false
+        title: LLM 2
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 90
+      id: '1750325173073'
+      position:
+        x: 1573.3565596275926
+        y: 699.0934643990729
+      positionAbsolute:
+        x: 1573.3565596275926
+        y: 699.0934643990729
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "import json\nimport re\n\ndef main(markdown_table):\n    # 分割 Markdown\
+          \ 表格为行\n    lines = markdown_table.strip().split('\\n')\n    \n    # 提取表头（第一行）\n\
+          \    headers = [header.strip() for header in lines[0].split('|')[1:-1]]\n\
+          \    # 移除第二行的分隔符（例如 |:---|)\n    data_lines = lines[2:]  # 从第三行开始是数据\n \
+          \   \n    # 初始化结果列表\n    result = []\n    \n    # 处理每一行数据\n    for line\
+          \ in data_lines:\n        # 分割每行，忽略首尾的空字符串\n        values = [value.strip()\
+          \ for value in line.split('|')[1:-1]]\n        \n        # 创建字典，将表头与值对应\n\
+          \        row_dict = {}\n        for header, value in zip(headers, values):\n\
+          \            # 根据值类型进行转换\n            if header == 'year' or header == 'users_rated':\n\
+          \                row_dict[header] = int(value)\n            elif header\
+          \ == 'average_rating':\n                row_dict[header] = float(value)\n\
+          \            else:  # name 字段保持为字符串\n                row_dict[header] =\
+          \ value\n        result.append(row_dict)\n    \n    # 将结果转换为 JSON 字符串\n\
+          \    return {'result': json.dumps(result, indent=2, ensure_ascii=False)}"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: 代码执行 5
+        type: code
+        variables:
+        - value_selector:
+          - '1733310096303'
+          - result
+          variable: markdown_table
+      height: 54
+      id: '1750325281135'
+      position:
+        x: 1281.8033769863482
+        y: 699.0934643990729
+      positionAbsolute:
+        x: 1281.8033769863482
+        y: 699.0934643990729
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "import re\nimport json\n\ndef main(markdown_text):\n    \"\"\"\n  \
+          \  从Markdown文本中提取Python代码块。\n    :param markdown_text: Markdown内容字符串\n \
+          \   :return: 提取的Python代码列表\n    \"\"\"\n    # 使用正则表达式匹配Markdown中的Python代码块\n\
+          \    code_blocks = re.findall(r'```python(.*?)```', markdown_text, re.DOTALL)\n\
+          \    code_string = [code.strip() for code in code_blocks][0]\n    return\
+          \ {\"code\":json.dumps(code_string)}\n"
+        code_language: python3
+        desc: ''
+        outputs:
+          code:
+            children: null
+            type: string
+        selected: false
+        title: 提取LLM中都代码 (1)
+        type: code
+        variables:
+        - value_selector:
+          - '1750325173073'
+          - text
+          variable: markdown_text
+      height: 54
+      id: '17503261835310'
+      position:
+        x: 1867.4098212636427
+        y: 699.0934643990729
+      positionAbsolute:
+        x: 1867.4098212636427
+        y: 699.0934643990729
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data:
+          - id: key-value-707
+            key: ''
+            type: text
+            value: '{"code":{{#17503261835310.code#}},"language":"python3"}'
+          type: json
+        desc: ''
+        headers: X-Api-Key:dify-sandbox
+        method: post
+        params: ''
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 100
+        selected: false
+        ssl_verify: true
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: sandbox 执行代码 (1)
+        type: http-request
+        url: http://sandbox:8194/v1/sandbox/run
+        variables: []
+      height: 140
+      id: '17503262188690'
+      position:
+        x: 2167.90987411189
+        y: 699.0934643990729
+      positionAbsolute:
+        x: 2167.90987411189
+        y: 699.0934643990729
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "import json\n\ndef main(response):\n    data= json.loads(response)\n\
+          \    return {\n        \"result\": data['data']['stdout'],\n    }\n"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: 提取输出内容 (1)
+        type: code
+        variables:
+        - value_selector:
+          - '17503262188690'
+          - body
+          variable: response
+      height: 54
+      id: '17503262912170'
+      position:
+        x: 2428.07529417383
+        y: 699.0934643990729
+      positionAbsolute:
+        x: 2428.07529417383
+        y: 699.0934643990729
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1733310096303'
+          - result
+          variable: result1
+        - value_selector:
+          - '17503262912170'
+          - result
+          variable: result2
+        selected: false
+        title: 结束 2
+        type: end
+      height: 116
+      id: '1750326315731'
+      position:
+        x: 2732.07529417383
+        y: 699.0934643990729
+      positionAbsolute:
+        x: 2732.07529417383
+        y: 699.0934643990729
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1733310096303'
+          - result
+          variable: result
+        selected: false
+        title: 结束 2
+        type: end
+      height: 90
+      id: '1750326374008'
+      position:
+        x: 942
+        y: 816.8151191380666
+      positionAbsolute:
+        x: 942
+        y: 816.8151191380666
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    viewport:
+      x: -309.19697432142084
+      y: -227.76860182471637
+      zoom: 0.7221943228088789

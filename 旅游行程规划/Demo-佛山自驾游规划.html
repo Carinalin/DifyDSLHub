@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>佛山自驾游攻略 | 2025年6月行程规划</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* 基础样式重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #1a73e8;
+            --secondary: #f57c00;
+            --accent: #388e3c;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #f5f7fa;
+        }
+        
+        /* Hero区域样式 */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 600px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a73e8 0%, #6a11cb 100%);
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1587588354456-ae774a9c978c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+            z-index: 1;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 900px;
+            padding: 20px;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+            animation: fadeInDown 1s ease;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .hero-stats {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+            animation: fadeInUp 1.2s ease;
+        }
+        
+        .stat-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            min-width: 200px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .stat-card i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: white;
+        }
+        
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2.5rem;
+            color: white;
+            z-index: 3;
+            animation: bounce 2s infinite;
+        }
+        
+        /* 主要内容区域 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+        
+        .section {
+            background: white;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            padding: 40px;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 5px;
+            width: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: var(--primary);
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        
+        .section-title i {
+            margin-right: 15px;
+            background: var(--primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* 表格样式 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        th {
+            background-color: var(--primary);
+            color: white;
+            font-weight: 600;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        tr:hover {
+            background-color: #e8f0fe;
+        }
+        
+        /* 卡片样式 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .card {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+            background: white;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card-header {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+        
+        .card-body {
+            padding: 25px;
+        }
+        
+        .icon-list {
+            list-style: none;
+        }
+        
+        .icon-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #e0e0e0;
+        }
+        
+        .icon-list li:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border: none;
+        }
+        
+        .icon-list i {
+            width: 40px;
+            height: 40px;
+            background: #e8f0fe;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+        
+        /* 天气卡片 */
+        .weather-cards {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .weather-card {
+            flex: 1;
+            min-width: 250px;
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            border-top: 5px solid var(--primary);
+        }
+        
+        .weather-card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .weather-icon {
+            font-size: 3rem;
+            color: #ff9800;
+            margin: 15px 0;
+        }
+        
+        .temp {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--dark);
+        }
+        
+        /* 页脚样式 */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .footer-logo {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 30px;
+            margin: 20px 0;
+        }
+        
+        .footer-links a {
+            color: #e0e0e0;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+        
+        /* 动画效果 */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-20px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .section {
+                padding: 30px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .stat-card {
+                min-width: 150px;
+                padding: 15px;
+            }
+            
+            .section-title {
+                font-size: 1.7rem;
+            }
+            
+            .section-title i {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+            
+            th, td {
+                padding: 10px;
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                height: 90vh;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-stats {
+                gap: 15px;
+            }
+            
+            .stat-card {
+                min-width: 120px;
+            }
+            
+            .weather-cards {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero区域 -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>佛山自驾游攻略</h1>
+            <p>探索岭南文化，品味地道美食，全家共享的精彩旅程</p>
+            
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>2025年6月23日 - 25日</h3>
+                    <p>共3天2夜</p>
+                </div>
+                
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <h3>家庭团队</h3>
+                    <p>2老 + 4成人 + 2小孩</p>
+                </div>
+                
+                <div class="stat-card">
+                    <i class="fas fa-wallet"></i>
+                    <h3>预算</h3>
+                    <p>2万元</p>
+                </div>
+                
+                <div class="stat-card">
+                    <i class="fas fa-car"></i>
+                    <h3>自驾游</h3>
+                    <p>深圳 ⇆ 佛山</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-down">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- 主要内容区域 -->
+    <div class="container">
+        <!-- 天气信息 -->
+        <section class="section">
+            <h2 class="section-title"><i class="fas fa-cloud-sun"></i> 天气信息</h2>
+            <div class="weather-cards">
+                <div class="weather-card">
+                    <h3>6月23日（周一）</h3>
+                    <div class="weather-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <div class="temp">27-35°C</div>
+                    <p>多云，北风1-3级</p>
+                </div>
+                
+                <div class="weather-card">
+                    <h3>6月24日（周二）</h3>
+                    <div class="weather-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <div class="temp">27-35°C</div>
+                    <p>多云，北风1-3级</p>
+                </div>
+                
+                <div class="weather-card">
+                    <h3>6月25日（周三）</h3>
+                    <div class="weather-icon">
+                        <i class="fas fa-cloud-rain"></i>
+                    </div>
+                    <div class="temp">26-35°C</div>
+                    <p>多云转雷阵雨，北风1-3级</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">必备物品</div>
+                <div class="card-body">
+                    <ul class="icon-list">
+                        <li>
+                            <i class="fas fa-id-card"></i>
+                            <span>身份证</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-sun"></i>
+                            <span>防晒霜、帽子</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-tshirt"></i>
+                            <span>轻便衣物</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-shoe-prints"></i>
+                            <span>运动鞋</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-umbrella"></i>
+                            <span>雨伞</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-bug"></i>
+                            <span>驱蚊液</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 行程概览 -->
+        <section class="section">
+            <h2 class="section-title"><i class="fas fa-route"></i> 行程概览</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>日期</th>
+                        <th>主要活动/景点</th>
+                        <th>活动类型</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>6月23日（周一）</td>
+                        <td>深圳出发 ➡️ 抵达佛山 ➡️ 入住酒店 ➡️ 午餐（有记餐厅） ➡️ 下午游览祖庙 ➡️ 晚餐（大笨象茶餐厅）</td>
+                        <td>文化古迹+美食体验</td>
+                    </tr>
+                    <tr>
+                        <td>6月24日（周二）</td>
+                        <td>早餐后游览梁园 ➡️ 午餐（渔意坊） ➡️ 下午游览千灯湖 ➡️ 晚餐（番茄奶奶餐室）</td>
+                        <td>园林+湖泊公园+美食</td>
+                    </tr>
+                    <tr>
+                        <td>6月25日（周三）</td>
+                        <td>早餐后游览南风古灶 ➡️ 午餐（可选） ➡️ 返程</td>
+                        <td>文化遗址+返程</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <!-- 详细时间表 -->
+        <section class="section">
+            <h2 class="section-title"><i class="fas fa-clock"></i> 详细时间表</h2>
+            
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-header">6月23日（周一）</div>
+                    <div class="card-body">
+                        <ul class="icon-list">
+                            <li>
+                                <i class="fas fa-car"></i>
+                                <div>
+                                    <strong>08:00 - 11:00</strong>
+                                    <p>深圳 ➡️ 佛山（自驾约2-3小时）</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-hotel"></i>
+                                <div>
+                                    <strong>11:30 - 12:30</strong>
+                                    <p>入住维多利亚酒店（佛山祖庙创意产业园店）</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-utensils"></i>
+                                <div>
+                                    <strong>12:30 - 13:30</strong>
+                                    <p>午餐：有记餐厅(金鱼街店)（人均50-80元）</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-landmark"></i>
+                                <div>
+                                    <strong>14:00 - 17:00</strong>
+                                    <p>游览祖庙（门票约20元/人）</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-mug-hot"></i>
+                                <div>
+                                    <strong>18:00 - 19:30</strong>
+                                    <p>晚餐：大笨象茶餐厅（人均40-60元）</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">6月24日（周二）</div>
+                    <div class="card-body">
+                        <ul class="icon-list">
+                            <li>
+                                <i class="fas fa-coffee"></i>
+                                <div>
+                                    <strong>08:00 - 09:00</strong>
+                                    <p>酒店早餐</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-tree"></i>
+                                <div>
+                                    <strong>09:30 - 11:30</strong>
+                                    <p>游览梁园（门票约10元/人）</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-fish"></i>
+                                <div>
+                                    <strong>12:00 - 13:00</strong>
+                                    <p>午餐：渔意坊地道顺德菜（人均60-100元）</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-water"></i>
+                                <div>
+                                    <strong>14:00 - 17:00</strong>
+                                    <p>游览千灯湖（免费参观）</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-utensil-spoon"></i>
+                                <div>
+                                    <strong>18:00 - 19:30</strong>
+                                    <p>晚餐：番茄奶奶餐室（人均50-80元）</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">6月25日（周三）</div>
+                    <div class="card-body">
+                        <ul class="icon-list">
+                            <li>
+                                <i class="fas fa-coffee"></i>
+                                <div>
+                                    <strong>08:00 - 09:00</strong>
+                                    <p>酒店早餐</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-monument"></i>
+                                <div>
+                                    <strong>09:30 - 11:30</strong>
+                                    <p>游览南风古灶（门票约25元/人）</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-utensils"></i>
+                                <div>
+                                    <strong>12:00 - 13:00</strong>
+                                    <p>午餐：附近餐厅（人均50-80元）</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-home"></i>
+                                <div>
+                                    <strong>13:30</strong>
+                                    <p>返程：佛山 ➡️ 深圳（自驾约2-3小时）</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 交通信息 -->
+        <section class="section">
+            <h2 class="section-title"><i class="fas fa-map-marked-alt"></i> 交通信息</h2>
+            <div class="card">
+                <div class="card-header">自驾路线</div>
+                <div class="card-body">
+                    <ul class="icon-list">
+                        <li>
+                            <i class="fas fa-road"></i>
+                            <div>
+                                <strong>6月23日</strong>
+                                <p>深圳 → 佛山维多利亚酒店（约2-3小时）</p>
+                                <p>酒店 → 祖庙（驾车10分钟）→ 晚餐地点（驾车5分钟）</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-road"></i>
+                            <div>
+                                <strong>6月24日</strong>
+                                <p>酒店 → 梁园（驾车15分钟）→ 午餐地点（驾车10分钟）→ 千灯湖（驾车20分钟）→ 晚餐地点（驾车15分钟）</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-road"></i>
+                            <div>
+                                <strong>6月25日</strong>
+                                <p>酒店 → 南风古灶（驾车20分钟）→ 返程深圳（约2-3小时）</p>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <div class="card" style="margin-top: 20px; background: #e8f0fe;">
+                        <div class="card-body">
+                            <p><i class="fas fa-exclamation-triangle"></i> <strong>注意事项：</strong>提前检查车辆状况，确保油量充足，遵守交通规则。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 住宿与餐饮 -->
+        <section class="section">
+            <h2 class="section-title"><i class="fas fa-concierge-bell"></i> 住宿与餐饮</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-header">住宿推荐</div>
+                    <div class="card-body">
+                        <h3>维多利亚酒店(佛山祖庙创意产业园店)</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> 地址：佛山大道中31号弼东大厦</p>
+                        <p><i class="fas fa-info-circle"></i> 类型：商务酒店</p>
+                        <p><i class="fas fa-store"></i> 附近便利设施：地铁站、餐厅、超市</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">餐饮推荐</div>
+                    <div class="card-body">
+                        <ul class="icon-list">
+                            <li>
+                                <i class="fas fa-utensils"></i>
+                                <div>
+                                    <strong>6月23日午餐</strong>
+                                    <p>有记餐厅(金鱼街店) - 粤菜（人均50-80元）</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-mug-hot"></i>
+                                <div>
+                                    <strong>6月23日晚餐</strong>
+                                    <p>大笨象茶餐厅 - 港式茶餐厅（人均40-60元）</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-fish"></i>
+                                <div>
+                                    <strong>6月24日午餐</strong>
+                                    <p>渔意坊地道顺德菜（人均60-100元）</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-utensil-spoon"></i>
+                                <div>
+                                    <strong>6月24日晚餐</strong>
+                                    <p>番茄奶奶餐室 - 西餐（人均50-80元）</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 景点介绍 -->
+        <section class="section">
+            <h2 class="section-title"><i class="fas fa-camera"></i> 景点详细介绍</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-header">祖庙</div>
+                    <div class="card-body">
+                        <p><i class="fas fa-map-marker-alt"></i> 地址：祖庙路21号</p>
+                        <p><i class="fas fa-ticket-alt"></i> 门票：约20元/人</p>
+                        <p><i class="fas fa-clock"></i> 停留时间：约3小时</p>
+                        <p>佛山祖庙是一座集岭南建筑艺术、宗教文化、武术文化于一体的古建筑群，适合全家游览。</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">梁园</div>
+                    <div class="card-body">
+                        <p><i class="fas fa-map-marker-alt"></i> 地址：松风路先锋古道93号</p>
+                        <p><i class="fas fa-ticket-alt"></i> 门票：约10元/人</p>
+                        <p><i class="fas fa-clock"></i> 停留时间：约2小时</p>
+                        <p>梁园是岭南四大园林之一，以小巧玲珑、布局精巧著称，适合散步和拍照。</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">千灯湖</div>
+                    <div class="card-body">
+                        <p><i class="fas fa-map-marker-alt"></i> 地址：灯湖西路28号</p>
+                        <p><i class="fas fa-ticket-alt"></i> 门票：免费</p>
+                        <p><i class="fas fa-clock"></i> 停留时间：约3小时</p>
+                        <p>千灯湖是一个以灯光为主题的湖泊公园，夜晚灯光璀璨，适合全家休闲散步。</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">南风古灶</div>
+                    <div class="card-body">
+                        <p><i class="fas fa-map-marker-alt"></i> 地址：高庙路5-34号</p>
+                        <p><i class="fas fa-ticket-alt"></i> 门票：约25元/人</p>
+                        <p><i class="fas fa-clock"></i> 停留时间：约2小时</p>
+                        <p>南风古灶是佛山陶瓷文化的代表景点，可以了解陶瓷制作的历史和工艺。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 实用信息 -->
+        <section class="section">
+            <h2 class="section-title"><i class="fas fa-info-circle"></i> 实用信息</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-header">紧急联系电话</div>
+                    <div class="card-body">
+                        <ul class="icon-list">
+                            <li>
+                                <i class="fas fa-ambulance"></i>
+                                <div>
+                                    <strong>当地急救</strong>
+                                    <p>120</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-shield-alt"></i>
+                                <div>
+                                    <strong>当地警方</strong>
+                                    <p>110</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-hotel"></i>
+                                <div>
+                                    <strong>酒店电话</strong>
+                                    <p>请提前记录</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">重要提示</div>
+                    <div class="card-body">
+                        <ul class="icon-list">
+                            <li>
+                                <i class="fas fa-sun"></i>
+                                <div>
+                                    <p>天气炎热，注意防晒和补水</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-walking"></i>
+                                <div>
+                                    <p>部分景点需步行，建议穿舒适的运动鞋</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-ticket-alt"></i>
+                                <div>
+                                    <p>提前网上购票，避免现场排队</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">预算摘要</div>
+                    <div class="card-body">
+                        <ul class="icon-list">
+                            <li>
+                                <i class="fas fa-ticket-alt"></i>
+                                <div>
+                                    <strong>门票总费用</strong>
+                                    <p>约200元（全家）</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-utensils"></i>
+                                <div>
+                                    <strong>餐饮费用</strong>
+                                    <p>约1500元（全家）</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-gas-pump"></i>
+                                <div>
+                                    <strong>油费及其他</strong>
+                                    <p>约500元</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-hotel"></i>
+                                <div>
+                                    <strong>住宿费用</strong>
+                                    <p>请提前确认酒店价格</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- 页脚 -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <i class="fas fa-map-signs"></i>
+            </div>
+            <h3>佛山自驾游攻略</h3>
+            <p>精心策划的家庭旅行，探索佛山文化与美食</p>
+            <div class="footer-links">
+                <a href="#"><i class="fas fa-home"></i> 首页</a>
+                <a href="#"><i class="fas fa-info-circle"></i> 关于</a>
+                <a href="#"><i class="fas fa-envelope"></i> 联系我们</a>
+            </div>
+            <p>© 2025 佛山自驾游攻略 | 设计精美，旅途愉快</p>
+        </div>
+    </footer>
+    
+    <script>
+        // 平滑滚动到内容区域
+        document.querySelector('.scroll-down').addEventListener('click', function() {
+            document.querySelector('.container').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        });
+        
+        // 卡片悬停效果增强
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>

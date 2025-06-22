@@ -1,0 +1,1077 @@
+app:
+  description: ''
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  mode: advanced-chat
+  name: 表格分析
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/deepseek:0.0.5@21408d5c48cd9f18d66b08883d0999fe89e6d049c891324c2229dea23b9665d5
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: antv/visualization:0.1.5@b0be04ad1cbf4d2de6bf612784d1994765319e6dfb49fda8a7c47f7278e16bc1
+kind: app
+version: 0.3.0
+workflow:
+  conversation_variables:
+  - description: ''
+    id: 88c25b58-1b15-461d-b02a-12edf29e94c6
+    name: graph
+    selector:
+    - conversation
+    - graph
+    value: ''
+    value_type: string
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        image_file_size_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: 请上传数据文件，向 LLM 提问。例：
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions:
+    - 请列出评分人数最多的五部电影
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: tool
+      id: 1750316560157-source-1750316582171-target
+      source: '1750316560157'
+      sourceHandle: source
+      target: '1750316582171'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: tool
+        targetType: code
+      id: 1750316582171-source-1750317191982-target
+      source: '1750316582171'
+      sourceHandle: source
+      target: '1750317191982'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: code
+      id: 1750317191982-source-1750324493554-target
+      source: '1750317191982'
+      sourceHandle: source
+      target: '1750324493554'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: llm
+      id: 1750324493554-source-1750327780572-target
+      source: '1750324493554'
+      sourceHandle: source
+      target: '1750327780572'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: tool
+        targetType: assigner
+      id: 1750327604236-source-1750329223928-target
+      source: '1750327604236'
+      sourceHandle: source
+      target: '1750329223928'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: assigner
+        targetType: answer
+      id: 1750329223928-source-1750323777111-target
+      source: '1750329223928'
+      sourceHandle: source
+      target: '1750323777111'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: if-else
+      id: 1750327780572-source-1750329480463-target
+      source: '1750327780572'
+      sourceHandle: source
+      target: '1750329480463'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: assigner
+      id: 1750329480463-true-1750329511045-target
+      source: '1750329480463'
+      sourceHandle: 'true'
+      target: '1750329511045'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: code
+      id: 1750329480463-false-1750328175372-target
+      source: '1750329480463'
+      sourceHandle: 'false'
+      target: '1750328175372'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: assigner
+        targetType: answer
+      id: 1750329511045-source-1750329497565-target
+      source: '1750329511045'
+      sourceHandle: source
+      target: '1750329497565'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: code
+      id: 1750328175372-source-1750330232080-target
+      source: '1750328175372'
+      sourceHandle: source
+      target: '1750330232080'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: answer
+      id: 1750330232080-source-1750330278879-target
+      source: '1750330232080'
+      sourceHandle: source
+      target: '1750330278879'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: tool
+      id: 1750328175372-source-1750327604236-target
+      source: '1750328175372'
+      sourceHandle: source
+      target: '1750327604236'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: answer
+      id: 1750317191982-source-1750332536691-target
+      source: '1750317191982'
+      sourceHandle: source
+      target: '1750332536691'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        desc: ''
+        selected: false
+        title: 开始
+        type: start
+        variables:
+        - allowed_file_extensions: []
+          allowed_file_types:
+          - document
+          allowed_file_upload_methods:
+          - local_file
+          - remote_url
+          label: 数据文件
+          max_length: 48
+          options: []
+          required: true
+          type: file
+          variable: File
+      height: 90
+      id: '1750316560157'
+      position:
+        x: 80
+        y: 282
+      positionAbsolute:
+        x: 80
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        is_team_authorization: true
+        output_schema: null
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: ''
+            ja_JP: ''
+            pt_BR: ''
+            zh_Hans: ''
+          label:
+            en_US: File
+            ja_JP: File
+            pt_BR: File
+            zh_Hans: File
+          llm_description: ''
+          max: null
+          min: null
+          name: File
+          options: []
+          placeholder:
+            en_US: ''
+            ja_JP: ''
+            pt_BR: ''
+            zh_Hans: ''
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: file
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: ''
+            ja_JP: ''
+            pt_BR: ''
+            zh_Hans: ''
+          label:
+            en_US: query
+            ja_JP: query
+            pt_BR: query
+            zh_Hans: query
+          llm_description: ''
+          max: null
+          min: null
+          name: query
+          options: []
+          placeholder:
+            en_US: ''
+            ja_JP: ''
+            pt_BR: ''
+            zh_Hans: ''
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        params:
+          File: ''
+          query: ''
+        provider_id: 448537b6-73c8-45df-850a-d90f3afaa14e
+        provider_name: runLLMCode
+        provider_type: workflow
+        selected: false
+        title: runLLMCode
+        tool_configurations: {}
+        tool_description: ''
+        tool_label: runLLMCode
+        tool_name: DataProcess
+        tool_parameters:
+          File:
+            type: variable
+            value:
+            - '1750316560157'
+            - File
+          query:
+            type: mixed
+            value: '{{#sys.query#}}'
+        type: tool
+      height: 54
+      id: '1750316582171'
+      position:
+        x: 379
+        y: 282
+      positionAbsolute:
+        x: 379
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "\ndef main(json_data):\n    output = json_data[0]['output']\n    return\
+          \ {'result': output}\n\n    "
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: 提取数据
+        type: code
+        variables:
+        - value_selector:
+          - '1750316582171'
+          - json
+          variable: json_data
+      height: 54
+      id: '1750317191982'
+      position:
+        x: 689
+        y: 282
+      positionAbsolute:
+        x: 689
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: '
+
+          AntV 图表：
+
+
+          ![img]({{#conversation.graph#}})
+
+
+          '
+        desc: ''
+        selected: false
+        title: AntV 绘制
+        type: answer
+        variables: []
+      height: 105
+      id: '1750323777111'
+      position:
+        x: 3044.7994477775715
+        y: 570.9947945790626
+      positionAbsolute:
+        x: 3044.7994477775715
+        y: 570.9947945790626
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "import json\nimport re\n\ndef main(markdown_table):\n    # 分割 Markdown\
+          \ 表格为行\n    lines = markdown_table.strip().split('\\n')\n    \n    # 提取表头（第一行）\n\
+          \    headers = [header.strip() for header in lines[0].split('|')[1:-1]]\n\
+          \    # 移除第二行的分隔符（例如 |:---|)\n    data_lines = lines[2:]  # 从第三行开始是数据\n \
+          \   \n    # 初始化结果列表\n    result = []\n    \n    # 处理每一行数据\n    for line\
+          \ in data_lines:\n        # 分割每行，忽略首尾的空字符串\n        values = [value.strip()\
+          \ for value in line.split('|')[1:-1]]\n        \n        # 创建字典，将表头与值对应\n\
+          \        row_dict = {}\n        for header, value in zip(headers, values):\n\
+          \            # 根据值类型进行转换\n            if header == 'year' or header == 'users_rated':\n\
+          \                row_dict[header] = int(value)\n            elif header\
+          \ == 'average_rating':\n                row_dict[header] = float(value)\n\
+          \            else:  # name 字段保持为字符串\n                row_dict[header] =\
+          \ value\n        result.append(row_dict)\n    \n    # 将结果转换为 JSON 字符串\n\
+          \    return {'result': json.dumps(result, indent=2, ensure_ascii=False)}"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: MD 转 JSON
+        type: code
+        variables:
+        - value_selector:
+          - '1750317191982'
+          - result
+          variable: markdown_table
+      height: 54
+      id: '1750324493554'
+      position:
+        x: 1077.2111419865669
+        y: 464.1068761852671
+      positionAbsolute:
+        x: 1077.2111419865669
+        y: 464.1068761852671
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        is_team_authorization: true
+        output_schema: null
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Data of column chart, such as, [{ "category":"北京", "value":825,
+              "group":"油车" }].
+            ja_JP: Data of column chart, such as, [{ "category":"北京", "value":825,
+              "group":"油车" }].
+            pt_BR: Data of column chart, such as, [{ "category":"北京", "value":825,
+              "group":"油车" }].
+            zh_Hans: 柱状图数据， 例如，[{ "category":"北京", "value":825, "group":"油车" }]。
+          label:
+            en_US: data of column chart
+            ja_JP: data of column chart
+            pt_BR: data of column chart
+            zh_Hans: 柱状图数据
+          llm_description: Data of column chart, such as, [{ "category":"北京", "value":825,
+            "group":"油车" }].
+          max: null
+          min: null
+          name: data
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: 0
+          form: llm
+          human_description:
+            en_US: Whether stacking is enabled. When enabled, area charts require
+              a 'group' field in the data.
+            ja_JP: Whether stacking is enabled. When enabled, area charts require
+              a 'group' field in the data.
+            pt_BR: Whether stacking is enabled. When enabled, area charts require
+              a 'group' field in the data..
+            zh_Hans: 是否开启柱状图叠加，当 stack 为 true， data 数据中 必须有 'group' 字段。
+          label:
+            en_US: stack
+            ja_JP: stack
+            pt_BR: stack
+            zh_Hans: 柱状图叠加
+          llm_description: Whether stacking is enabled. When enabled, area charts
+            require a 'group' field in the data.
+          max: null
+          min: null
+          name: stack
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: boolean
+        - auto_generate: null
+          default: 0
+          form: llm
+          human_description:
+            en_US: Whether grouping is enabled. When enabled, column charts require
+              a 'group' field in the data. When `group` is true, `stack` should be
+              false.
+            ja_JP: Whether grouping is enabled. When enabled, column charts require
+              a 'group' field in the data. When `group` is true, `stack` should be
+              false.
+            pt_BR: Whether grouping is enabled. When enabled, column charts require
+              a 'group' field in the data. When `group` is true, `stack` should be
+              false.
+            zh_Hans: 是否开启柱状图分组，当 group 为 true，data 数据中 必须有 'group' 字段。
+          label:
+            en_US: group
+            ja_JP: group
+            pt_BR: group
+            zh_Hans: 柱状图分组
+          llm_description: Whether grouping is enabled. When enabled, column charts
+            require a 'group' field in the data. When `group` is true, `stack` should
+            be false.
+          max: null
+          min: null
+          name: group
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: boolean
+        - auto_generate: null
+          default: 600
+          form: form
+          human_description:
+            en_US: Set the width of chart, default is 600.
+            ja_JP: Set the width of chart, default is 600.
+            pt_BR: Set the width of chart, default is 600.
+            zh_Hans: 请设置图表宽度， 默认值为 600。
+          label:
+            en_US: width
+            ja_JP: width
+            pt_BR: width
+            zh_Hans: 宽
+          llm_description: Set the width of chart, default is 600.
+          max: null
+          min: null
+          name: width
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: number
+        - auto_generate: null
+          default: 400
+          form: form
+          human_description:
+            en_US: Set the height of chart, default is 400.
+            ja_JP: Set the height of chart, default is 400.
+            pt_BR: Set the height of chart, default is 400.
+            zh_Hans: 请设置图表高度，默认值为 400。
+          label:
+            en_US: height
+            ja_JP: height
+            pt_BR: height
+            zh_Hans: 高
+          llm_description: Set the height of chart, default is 400.
+          max: null
+          min: null
+          name: height
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: number
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Set the title of chart.
+            ja_JP: Set the title of chart.
+            pt_BR: Set the title of chart.
+            zh_Hans: 请设置图表名称。
+          label:
+            en_US: title
+            ja_JP: title
+            pt_BR: title
+            zh_Hans: 图表名称
+          llm_description: Set the title of chart.
+          max: null
+          min: null
+          name: title
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Set the axisXTitle of chart.
+            ja_JP: Set the axisXTitle of chart.
+            pt_BR: Set the axisXTitle of chart.
+            zh_Hans: 请设置图表 X 轴名称。
+          label:
+            en_US: axisXTitle
+            ja_JP: axisXTitle
+            pt_BR: axisXTitle
+            zh_Hans: 图表 X 轴名称
+          llm_description: Set the axisXTitle of chart.
+          max: null
+          min: null
+          name: axisXTitle
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Set the axisYTitle of chart.
+            ja_JP: Set the axisYTitle of chart.
+            pt_BR: Set the axisYTitle of chart.
+            zh_Hans: 请设置图表 Y 轴名称。
+          label:
+            en_US: axisYTitle
+            ja_JP: axisYTitle
+            pt_BR: axisYTitle
+            zh_Hans: 图表 Y 轴名称
+          llm_description: Set the axisYTitle of chart.
+          max: null
+          min: null
+          name: axisYTitle
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: default
+          form: form
+          human_description:
+            en_US: Set the theme of chart.
+            ja_JP: Set the theme of chart.
+            pt_BR: Set the theme of chart.
+            zh_Hans: 请设置图表主题。
+          label:
+            en_US: theme
+            ja_JP: theme
+            pt_BR: theme
+            zh_Hans: 图表主题
+          llm_description: Set the theme of chart.
+          max: null
+          min: null
+          name: theme
+          options:
+          - label:
+              en_US: default
+              ja_JP: default
+              pt_BR: default
+              zh_Hans: 默认主题
+            value: default
+          - label:
+              en_US: academy
+              ja_JP: academy
+              pt_BR: academy
+              zh_Hans: 学术主题
+            value: academy
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: select
+        params:
+          axisXTitle: ''
+          axisYTitle: ''
+          data: ''
+          group: ''
+          height: ''
+          stack: ''
+          theme: ''
+          title: ''
+          width: ''
+        provider_id: antv/visualization/visualization
+        provider_name: antv/visualization/visualization
+        provider_type: builtin
+        selected: false
+        title: AntV生成柱状图
+        tool_configurations:
+          height: 400
+          theme: default
+          width: 600
+        tool_description: 生成一个柱状图，对不同类别进行数值比较，例如，当数值接近时，由于人眼对于高度的感知优于其他视觉元素（如面积、角度等），因此，使用柱状图更加合适。
+        tool_label: 生成柱状图
+        tool_name: generate_column_chart
+        tool_parameters:
+          axisXTitle:
+            type: mixed
+            value: ''
+          data:
+            type: mixed
+            value: '{{#1750328175372.result#}}'
+          stack:
+            type: mixed
+            value: ''
+          title:
+            type: mixed
+            value: ''
+        type: tool
+      height: 142
+      id: '1750327604236'
+      position:
+        x: 2430.929591949409
+        y: 416.5395437001658
+      positionAbsolute:
+        x: 2430.929591949409
+        y: 416.5395437001658
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1750324493554'
+          - result
+        desc: ''
+        model:
+          completion_params: {}
+          mode: chat
+          name: deepseek-chat
+          provider: langgenius/deepseek/deepseek
+        prompt_template:
+        - id: 8c01aef6-224e-48d1-aad6-a68a9fd31549
+          role: system
+          text: '请仔细理解这份 json 文件：{{#context#}}，从中选出重要的数据列用于绘制柱状图。如果你觉得数据不适合绘制柱状图，则返回
+            null。
+
+            步骤：
+
+            1. 理解 json 文件，找出重要的数据列用于绘制柱状图。如果你觉得数据不适合绘制柱状图，则返回 null，无需进行下面的步骤。
+
+            2. 将选中的数据列名称修改为 category 和 value。注意：category 的类型是 string，而 value 的类型是
+            float。
+
+            3. 输出修改后的 json 文件。
+
+
+            输出要求：
+
+            以 array 形式返回：
+
+            [''think'': 你的思考过程, ''json'': 修改后的 json 文件]'
+        selected: false
+        title: 优化 JSON
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 90
+      id: '1750327780572'
+      position:
+        x: 1446.5200885541321
+        y: 464.1068761852671
+      positionAbsolute:
+        x: 1446.5200885541321
+        y: 464.1068761852671
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "import re\nimport json\n\ndef main(response_string):\n    try:\n  \
+          \      # 使用正则表达式提取 'json': [...] 的内容\n        pattern = r\"'json':\\s*\\\
+          [(.*?)\\]\"\n        match = re.search(pattern, response_string, re.DOTALL)\n\
+          \        \n        if not match:\n            return {\"result\": \"Error:\
+          \ No 'json' field found in response\"}\n        \n        json_content =\
+          \ f\"[{match.group(1)}]\"  # 还原为完整的 JSON 数组\n        \n        # 验证 json_content\
+          \ 是否为有效的 JSON\n        parsed_json = json.loads(json_content)\n        \n\
+          \        # 返回字典形式，键为 \"result\"\n        return {\"result\": f\"{parsed_json}\"\
+          }\n    \n    except json.JSONDecodeError as e:\n        return {\"result\"\
+          : f\"Error: Invalid JSON format in 'json' field: {str(e)}\"}\n    except\
+          \ Exception as e:\n        return {\"result\": f\"Unexpected error: {str(e)}\"\
+          }"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: 提取 JSON
+        type: code
+        variables:
+        - value_selector:
+          - '1750327780572'
+          - text
+          variable: response_string
+      height: 54
+      id: '1750328175372'
+      position:
+        x: 2080.439343852598
+        y: 580.2320220945758
+      positionAbsolute:
+        x: 2080.439343852598
+        y: 580.2320220945758
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        items:
+        - input_type: variable
+          operation: over-write
+          value:
+          - '1750327604236'
+          - text
+          variable_selector:
+          - conversation
+          - graph
+          write_mode: over-write
+        selected: false
+        title: 变量赋值
+        type: assigner
+        version: '2'
+      height: 88
+      id: '1750329223928'
+      position:
+        x: 2702.572121992369
+        y: 570.9947945790626
+      positionAbsolute:
+        x: 2702.572121992369
+        y: 570.9947945790626
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: contains
+            id: 3a7667ab-dfb3-4262-ab5c-0c3e9bc510b1
+            value: 'null'
+            varType: string
+            variable_selector:
+            - '1750327780572'
+            - text
+          id: 'true'
+          logical_operator: and
+        desc: ''
+        selected: false
+        title: 是否绘图
+        type: if-else
+      height: 126
+      id: '1750329480463'
+      position:
+        x: 1737.342321847822
+        y: 408.6835110921878
+      positionAbsolute:
+        x: 1737.342321847822
+        y: 408.6835110921878
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: '
+
+          {{#conversation.graph#}}
+
+
+          '
+        desc: ''
+        selected: false
+        title: 不绘制图表
+        type: answer
+        variables: []
+      height: 105
+      id: '1750329497565'
+      position:
+        x: 2408.192214606774
+        y: 257.19441047165986
+      positionAbsolute:
+        x: 2408.192214606774
+        y: 257.19441047165986
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        items:
+        - input_type: constant
+          operation: set
+          value: 无合适的柱状图绘制
+          variable_selector:
+          - conversation
+          - graph
+          write_mode: over-write
+        selected: false
+        title: 变量赋值 2
+        type: assigner
+        version: '2'
+      height: 88
+      id: '1750329511045'
+      position:
+        x: 2071.6932122559365
+        y: 257.19441047165986
+      positionAbsolute:
+        x: 2071.6932122559365
+        y: 257.19441047165986
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "import json\nimport random\n\ndef main(data):\n    # 替换单引号为双引号\n  \
+          \  data_fixed = data.replace(\"'\", '\"')\n    json_data = json.loads(data_fixed)\n\
+          \    field_names = list(json_data[0].keys())  # 获取字段名列表\n    field_data\
+          \ = {field: [] for field in field_names}  # 使用字段名作为字典的键\n\n    for item\
+          \ in json_data:\n        for field in field_names:\n            field_data[field].append(item[field])\n\
+          \n    # 生成每个柱子的颜色\n    series_data = []\n    for field in field_names[1:]:\
+          \  # 排除分类轴\n        field_colors = [\n            f\"rgb({random.randint(0,\
+          \ 255)}, {random.randint(0, 255)}, {random.randint(0, 255)})\"\n       \
+          \     for _ in field_data[field_names[0]]  # 生成与分类轴数据相同数量的颜色\n        ]\n\
+          \        series_data.append({\n            \"name\": field,\n          \
+          \  \"type\": \"bar\",\n            \"data\": [\n                {\"value\"\
+          : value, \"itemStyle\": {\"color\": color}}\n                for value,\
+          \ color in zip(field_data[field], field_colors)\n            ],\n      \
+          \      \"label\": {\n                \"show\": True,\n                \"\
+          position\": \"top\",\n                \"formatter\": \"{c}\"\n         \
+          \   }\n        })\n\n    # 生成 ECharts 图表配置\n    echarts_config = {\n   \
+          \     \"tooltip\": {},\n        \"xAxis\": {\n            \"type\": \"category\"\
+          ,\n            \"data\": field_data[field_names[0]],\n            \"axisLabel\"\
+          : {\n                \"show\": False  # 不显示x轴的数据标签\n            }\n    \
+          \    },\n        \"yAxis\": {},\n        \"series\": series_data\n    }\n\
+          \n    # 输出结果\n    output = (\n        \"```echarts\\n\" +\n        json.dumps(echarts_config,\
+          \ indent=2, ensure_ascii=False) +\n        \"\\n```\"\n    )\n    return\
+          \ {\"output\": output}"
+        code_language: python3
+        desc: ''
+        outputs:
+          output:
+            children: null
+            type: string
+        selected: false
+        title: 代码生成柱状图
+        type: code
+        variables:
+        - value_selector:
+          - '1750328175372'
+          - result
+          variable: data
+      height: 54
+      id: '1750330232080'
+      position:
+        x: 2430.929591949409
+        y: 802.2255809640768
+      positionAbsolute:
+        x: 2430.929591949409
+        y: 802.2255809640768
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: '
+
+          Echart 图表：
+
+
+          {{#1750330232080.output#}}
+
+
+          '
+        desc: ''
+        selected: false
+        title: 代码绘制
+        type: answer
+        variables: []
+      height: 121
+      id: '1750330278879'
+      position:
+        x: 2702.572121992369
+        y: 802.2255809640768
+      positionAbsolute:
+        x: 2702.572121992369
+        y: 802.2255809640768
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: '
+
+
+          {{#1750317191982.result#}}
+
+
+          '
+        desc: ''
+        selected: false
+        title: 绘制表格
+        type: answer
+        variables: []
+      height: 105
+      id: '1750332536691'
+      position:
+        x: 1177.2402419983853
+        y: 219.65224906782146
+      positionAbsolute:
+        x: 1177.2402419983853
+        y: 219.65224906782146
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    viewport:
+      x: -1010.4557923151201
+      y: 72.00366868424979
+      zoom: 0.6224012004603662
