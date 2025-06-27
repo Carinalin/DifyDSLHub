@@ -1,0 +1,105 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Fortune Teller API",
+    "description": "Generates a personalized daily fortune or motivational quote for a given user.",
+    "version": "v1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://host.docker.internal:8082"
+    }
+  ],
+  "paths": {
+    "/fortune": {
+      "post": {
+        "summary": "Generates a personalized fortune or motivational quote.",
+        "description": "Returns a randomly generated fortune or motivational quote based on the provided username.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "username": {
+                    "type": "string",
+                    "description": "The name of the user requesting the fortune."
+                  }
+                },
+                "required": ["username"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Fortune or motivational quote generated successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "example": "Alice, the stars align to reveal a mystical path: you will embark on a new adventure that will lead to unexpected friendships."
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Invalid Authorization header.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "detail": {
+                      "type": "string",
+                      "example": "Invalid Authorization header"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "No username provided in the request body.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "error"
+                    },
+                    "errorInfo": {
+                      "type": "string",
+                      "example": "No username provided"
+                    },
+                    "data": {
+                      "type": "null"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {},
+    "securitySchemes": {
+      "BearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  }
+}

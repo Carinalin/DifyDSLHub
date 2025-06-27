@@ -119,6 +119,19 @@
 
 ## 2. DSL更新
 
+### 2025-06-27
+
+| 文件夹                      | 简介                                                         | 注释                                                         |
+| --------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 免费用 GPT-4.1 和 Flux 画图 | [Pollinations AI](https://github.com/pollinations/pollinations/blob/master/APIDOCS.md) 提供了许多免费且免 key 的模型，用 Get 方法可轻松调用。工作流创建了自定义工具来调用 Pollinations AI 的文本模型，对用户的输入进行美化，然后再用 HTTP 请求生成最终图片。 | 系统提示词来源：[wwzhouhui](https://mp.weixin.qq.com/s/_1QUokeguR9NFKsV0yxaHg) |
+| 提示工程指南                | 这只是一个笔记，为本人学习 [PromptEngineeringGuide](https://www.promptingguide.ai/introduction) 时撰写，笔记里加入了许多本人感兴趣的扩展知识。因为觉得 prompt 的编写对 workflow 和 vibe coding 都很重要，就一并放上来分享了～ | ——                                                           |
+
+**输出示例：**
+
+1. 免费用 GPT-4.1 和 Flux 画图：
+
+   ![image-20250627162517696](image/image-20250627162517696.png)
+
 ### 2025-06-22
 
 | 文件夹       | 简介                                                         | 注释                                                         |
