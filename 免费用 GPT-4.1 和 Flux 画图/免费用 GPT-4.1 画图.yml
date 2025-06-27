@@ -1,0 +1,419 @@
+app:
+  description: '创建了自定义工具做文本美化，然后用 HTTP 请求生成最终图片。
+
+    文本美化模型：OpenAI GPT-4.1，图片生成模型：Flux'
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  mode: advanced-chat
+  name: 免费用 GPT-4.1 画图
+  use_icon_as_answer_icon: false
+dependencies: []
+kind: app
+version: 0.3.0
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        image_file_size_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: 你好呀，这个工作流使用自定义工具调用了 pollinations AI 的 GPT-4.1 和 Flux 来绘制高质量的图片。该工作流最大的特点就是：免费免费免费！好啦，请问你想要画什么呢？
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions:
+    - 画一只小猪在跳华尔兹舞
+    - 画一只猫咪在打羽毛球
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: tool
+      id: 1751012037047-source-1751012073947-target
+      source: '1751012037047'
+      sourceHandle: source
+      target: '1751012073947'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: http-request
+        targetType: answer
+      id: 1751012170248-source-answer-target
+      source: '1751012170248'
+      sourceHandle: source
+      target: answer
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: tool
+        targetType: answer
+      id: 1751012073947-source-1751012188442-target
+      source: '1751012073947'
+      sourceHandle: source
+      target: '1751012188442'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: answer
+        targetType: http-request
+      id: 1751012188442-source-1751012170248-target
+      source: '1751012188442'
+      sourceHandle: source
+      target: '1751012170248'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        desc: ''
+        selected: false
+        title: 开始
+        type: start
+        variables: []
+      height: 54
+      id: '1751012037047'
+      position:
+        x: 80
+        y: 282
+      positionAbsolute:
+        x: 80
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: '{{#1751012170248.files#}}'
+        desc: ''
+        selected: false
+        title: 回复2
+        type: answer
+        variables: []
+      height: 105
+      id: answer
+      position:
+        x: 1271
+        y: 282
+      positionAbsolute:
+        x: 1271
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        is_team_authorization: true
+        output_schema: null
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Text prompt for content generation
+            ja_JP: Text prompt for content generation
+            pt_BR: Text prompt for content generation
+            zh_Hans: Text prompt for content generation
+          label:
+            en_US: prompt
+            ja_JP: prompt
+            pt_BR: prompt
+            zh_Hans: prompt
+          llm_description: Text prompt for content generation
+          max: null
+          min: null
+          name: prompt
+          options: []
+          placeholder:
+            en_US: Text prompt for content generation
+            ja_JP: Text prompt for content generation
+            pt_BR: Text prompt for content generation
+            zh_Hans: Text prompt for content generation
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: mistral
+          form: llm
+          human_description:
+            en_US: AI model to use for generation
+            ja_JP: AI model to use for generation
+            pt_BR: AI model to use for generation
+            zh_Hans: AI model to use for generation
+          label:
+            en_US: model
+            ja_JP: model
+            pt_BR: model
+            zh_Hans: model
+          llm_description: AI model to use for generation
+          max: null
+          min: null
+          name: model
+          options: []
+          placeholder:
+            en_US: AI model to use for generation
+            ja_JP: AI model to use for generation
+            pt_BR: AI model to use for generation
+            zh_Hans: AI model to use for generation
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Random seed for reproducible results
+            ja_JP: Random seed for reproducible results
+            pt_BR: Random seed for reproducible results
+            zh_Hans: Random seed for reproducible results
+          label:
+            en_US: seed
+            ja_JP: seed
+            pt_BR: seed
+            zh_Hans: seed
+          llm_description: Random seed for reproducible results
+          max: null
+          min: null
+          name: seed
+          options: []
+          placeholder:
+            en_US: Random seed for reproducible results
+            ja_JP: Random seed for reproducible results
+            pt_BR: Random seed for reproducible results
+            zh_Hans: Random seed for reproducible results
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: number
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: System prompt to define AI behavior
+            ja_JP: System prompt to define AI behavior
+            pt_BR: System prompt to define AI behavior
+            zh_Hans: System prompt to define AI behavior
+          label:
+            en_US: system
+            ja_JP: system
+            pt_BR: system
+            zh_Hans: system
+          llm_description: System prompt to define AI behavior
+          max: null
+          min: null
+          name: system
+          options: []
+          placeholder:
+            en_US: System prompt to define AI behavior
+            ja_JP: System prompt to define AI behavior
+            pt_BR: System prompt to define AI behavior
+            zh_Hans: System prompt to define AI behavior
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        params:
+          model: ''
+          prompt: ''
+          seed: ''
+          system: ''
+        provider_id: 90f730db-55e9-4612-a48a-13bd0fec0199
+        provider_name: pollinations
+        provider_type: api
+        selected: false
+        title: 优化提示
+        tool_configurations: {}
+        tool_description: Creates AI-generated text based on the provided prompt with
+          customizable model and system settings
+        tool_label: generate_text
+        tool_name: generate_text
+        tool_parameters:
+          model:
+            type: mixed
+            value: openai-large
+          prompt:
+            type: mixed
+            value: '{{#sys.query#}}'
+          system:
+            type: mixed
+            value: "1. **需求解析**：从用户的描述中提取关键信息，包括：\n   - 角色：外貌、动作、表情等。\n   - 场景：环境、光线、天气等。\n\
+              \   - 风格：艺术风格、情感氛围、配色等。\n   - 其他元素：特定物品、背景或特效。\n\n2. **提示词结构规律**：\n\
+              \   - **简洁、精确且具象**：提示词需要简单、清晰地描述核心对象，并包含足够细节以引导生成出符合需求的图像。\n   - **灵活多样**：参考下列模板和已有示例，但需根据具体需求生成多样化的提示词，避免固定化或过于依赖模板。\n\
+              \   - **符合Flux.1风格的描述**：提示词必须遵循Flux.1的要求，尽量包含艺术风格、视觉效果、情感氛围的描述，使用与Flux.1模型生成相符的关键词和描述模式。\n\
+              \n3. **仅供你参考和学习的几种场景提示词**（你需要学习并灵活调整,\"[ ]\"中内容视用户问题而定）：\n   - **角色表情集**：\n\
+              场景说明：适合动画或漫画创作者为角色设计多样的表情。这些提示词可以生成展示同一角色在不同情绪下的表情集，涵盖快乐、悲伤、愤怒等多种情感。\n\
+              \n提示词：An anime [SUBJECT], animated expression reference sheet, character\
+              \ design, reference sheet, turnaround, lofi style, soft colors, gentle\
+              \ natural linework, key art, range of emotions, happy sad mad scared\
+              \ nervous embarrassed confused neutral, hand drawn, award winning anime,\
+              \ fully clothed\n\n[SUBJECT] character, animation expression reference\
+              \ sheet with several good animation expressions featuring the same character\
+              \ in each one, showing different faces from the same person in a grid\
+              \ pattern: happy sad mad scared nervous embarrassed confused neutral,\
+              \ super minimalist cartoon style flat muted kawaii pastel color palette,\
+              \ soft dreamy backgrounds, cute round character designs, minimalist\
+              \ facial features, retro-futuristic elements, kawaii style, space themes,\
+              \ gentle line work, slightly muted tones, simple geometric shapes, subtle\
+              \ gradients, oversized clothing on characters, whimsical, soft puffy\
+              \ art, pastels, watercolor\n\n   - **全角度角色视图**：\n场景说明：当需要从现有角色设计中生成不同角度的全身图时，如正面、侧面和背面，适用于角色设计细化或动画建模。\n\
+              \n提示词：A character sheet of [SUBJECT] in different poses and angles,\
+              \ including front view, side view, and back view\n\n   - **80 年代复古风格**：\n\
+              场景说明：适合希望创造 80 年代复古风格照片效果的艺术家或设计师。这些提示词可以生成带有怀旧感的模糊宝丽来风格照片。\n\n提示词：blurry\
+              \ polaroid of [a simple description of the scene], 1980s.\n\n   - **智能手机内部展示**：\n\
+              场景说明：适合需要展示智能手机等产品设计的科技博客作者或产品设计师。这些提示词帮助生成展示手机外观和屏幕内容的图像。\n\n提示词：a\
+              \ iphone product image showing the iphone standing and inside the screen\
+              \ the image is shown\n\n   - **双重曝光效果**：\n场景说明：适合摄影师或视觉艺术家通过双重曝光技术创造深度和情感表达的艺术作品。\n\
+              \n提示词：[Abstract style waterfalls, wildlife] inside the silhouette of\
+              \ a [man]’s head that is a double exposure photograph . Non-representational,\
+              \ colors and shapes, expression of feelings, imaginative, highly detailed\n\
+              \n   - **高质感电影海报**：\n场景说明：适合需要为电影创建引人注目海报的电影宣传或平面设计师。\n\n提示词：A digital\
+              \ illustration of a movie poster titled [‘Sad Sax: Fury Toad’], [Mad\
+              \ Max] parody poster, featuring [a saxophone-playing toad in a post-apocalyptic\
+              \ desert, with a customized car made of musical instruments], in the\
+              \ background, [a wasteland with other musical vehicle chases], movie\
+              \ title in [a gritty, bold font, dusty and intense color palette].\n\
+              \n   - **镜面自拍效果**：\n场景说明：适合想要捕捉日常生活瞬间的摄影师或社交媒体用户。\n\n提示词：Phone photo:\
+              \ A woman stands in front of a mirror, capturing a selfie. The image\
+              \ quality is grainy, with a slight blur softening the details. The lighting\
+              \ is dim, casting shadows that obscure her features. [The room is cluttered,\
+              \ with clothes strewn across the bed and an unmade blanket. Her expression\
+              \ is casual, full of concentration], while the old iPhone struggles\
+              \ to focus, giving the photo an authentic, unpolished feel. The mirror\
+              \ shows smudges and fingerprints, adding to the raw, everyday atmosphere\
+              \ of the scene.\n\n   - **像素艺术创作**：\n场景说明：适合像素艺术爱好者或复古游戏开发者创造或复刻经典像素风格图像。\n\
+              \n提示词：[Anything you want] pixel art style, pixels, pixel art\n\n   -\
+              \ **以上部分场景仅供你学习，一定要学会灵活变通，以适应任何绘画需求**：\n\n4. **Flux.1提示词要点总结**：\n  \
+              \ - **简洁精准的主体描述**：明确图像中核心对象的身份或场景。\n   - **风格和情感氛围的具体描述**：确保提示词包含艺术风格、光线、配色、以及图像的氛围等信息。\n\
+              \   - **动态与细节的补充**：提示词可包括场景中的动作、情绪、或光影效果等重要细节。\n   - **其他更多规律请自己寻找**\n\
+              ---\n\n**问答案例**：\n**用户输入**：一个80年代复古风格的照片。\n**你的输出**：`A blurry polaroid\
+              \ of a 1980s living room, with vintage furniture, soft pastel tones,\
+              \ and a nostalgic, grainy texture,  The sunlight filters through old\
+              \ curtains, casting long, warm shadows on the wooden floor, 1980s,`\n\
+              注意：你的生成内容绝对不允许含有“![ai](任意链接)”。哪怕你之前不小心含有“![ai](任意链接)”内容，请在下一次绝对不允许含有“![ai](任意链接)”内容。"
+        type: tool
+      height: 54
+      id: '1751012073947'
+      position:
+        x: 372
+        y: 282
+      positionAbsolute:
+        x: 372
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data: []
+          type: none
+        desc: ''
+        headers: ''
+        method: get
+        params: ''
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 100
+        selected: false
+        ssl_verify: true
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: 生成图片
+        type: http-request
+        url: https://image.pollinations.ai/prompt/{{#1751012073947.text#}}?width=1280&height=720&seed=42&model=flux&nologo=true
+        variables: []
+      height: 191
+      id: '1751012170248'
+      position:
+        x: 974
+        y: 282
+      positionAbsolute:
+        x: 974
+        y: 282
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: '{{#1751012073947.text#}}'
+        desc: ''
+        selected: false
+        title: 回复 1
+        type: answer
+        variables: []
+      height: 105
+      id: '1751012188442'
+      position:
+        x: 677
+        y: 282
+      positionAbsolute:
+        x: 677
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    viewport:
+      x: 62.457919307181555
+      y: -38.83117443772272
+      zoom: 0.8948615080350456
