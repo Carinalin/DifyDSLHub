@@ -1,0 +1,2078 @@
+app:
+  description: ''
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  mode: advanced-chat
+  name: 每日热点新闻生成器
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: jaguarliuu/rookie_rss:0.0.1@77247c73a3a4ca3e9dd3831e2063f858d2eba64ba5f2dd1ee65b1383489d5920
+kind: app
+version: 0.3.0
+workflow:
+  conversation_variables:
+  - description: ''
+    id: 84424ec4-9af4-41d3-9151-e307305cf96a
+    name: riqi
+    selector:
+    - conversation
+    - riqi
+    value: ''
+    value_type: string
+  - description: ''
+    id: c2997073-1d0b-4e15-a3cc-745842e91bb6
+    name: rebangbiaoge
+    selector:
+    - conversation
+    - rebangbiaoge
+    value: ''
+    value_type: string
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        image_file_size_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: 你好呀，这里是每日热榜工作流。该工作流使用 Rookie RSS 调用 https://hot.imsyy.top/
+      的热榜数据，收集了虎嗅、微博、掘金、头条、36氪等 5 个网站的数据并整理成 markdown 表格输出。你准备好查看今日热点新闻了么？准备好就请点击“Let's
+      Go!”吧！
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions:
+    - Let's Go!
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInLoop: false
+        sourceType: tool
+        targetType: tool
+      id: 1751794321702-source-1751725644838-target
+      selected: false
+      source: '1751794321702'
+      sourceHandle: source
+      target: '1751725644838'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: tool
+        targetType: tool
+      id: 1751794321702-source-1751795930848-target
+      selected: false
+      source: '1751794321702'
+      sourceHandle: source
+      target: '1751795930848'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: tool
+        targetType: tool
+      id: 1751794321702-source-1751795945902-target
+      selected: false
+      source: '1751794321702'
+      sourceHandle: source
+      target: '1751795945902'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: tool
+        targetType: tool
+      id: 1751794321702-source-1751795958498-target
+      selected: false
+      source: '1751794321702'
+      sourceHandle: source
+      target: '1751795958498'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: tool
+        targetType: tool
+      id: 1751794321702-source-1751795973013-target
+      selected: false
+      source: '1751794321702'
+      sourceHandle: source
+      target: '1751795973013'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: tool
+        targetType: template-transform
+      id: 1751725644838-source-1751796095503-target
+      selected: false
+      source: '1751725644838'
+      sourceHandle: source
+      target: '1751796095503'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: tool
+        targetType: template-transform
+      id: 1751795930848-source-1751796095503-target
+      selected: false
+      source: '1751795930848'
+      sourceHandle: source
+      target: '1751796095503'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: template-transform
+        targetType: code
+      id: 1751796095503-source-1751798014831-target
+      selected: false
+      source: '1751796095503'
+      sourceHandle: source
+      target: '1751798014831'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: tool
+        targetType: template-transform
+      id: 1751795945902-source-1751796095503-target
+      selected: false
+      source: '1751795945902'
+      sourceHandle: source
+      target: '1751796095503'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: tool
+        targetType: template-transform
+      id: 1751795958498-source-1751796095503-target
+      selected: false
+      source: '1751795958498'
+      sourceHandle: source
+      target: '1751796095503'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: tool
+        targetType: template-transform
+      id: 1751795973013-source-1751796095503-target
+      selected: false
+      source: '1751795973013'
+      sourceHandle: source
+      target: '1751796095503'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: if-else
+      id: 1751725631878-source-1751801126131-target
+      source: '1751725631878'
+      sourceHandle: source
+      target: '1751801126131'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: tool
+      id: 1751801126131-true-1751794321702-target
+      selected: false
+      source: '1751801126131'
+      sourceHandle: 'true'
+      target: '1751794321702'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: answer
+      id: 1751801126131-91104c1d-165f-4f46-9426-accd7bf841ab-1751798276644-target
+      source: '1751801126131'
+      sourceHandle: 91104c1d-165f-4f46-9426-accd7bf841ab
+      target: '1751798276644'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: assigner
+      id: 1751798014831-source-1751807381236-target
+      source: '1751798014831'
+      sourceHandle: source
+      target: '1751807381236'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: assigner
+        targetType: answer
+      id: 1751807381236-source-1751800693593-target
+      source: '1751807381236'
+      sourceHandle: source
+      target: '1751800693593'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: agent
+      id: 1751801126131-00eb1ca9-64f3-4263-b538-8c5a8ff5ec6d-1751799633553-target
+      source: '1751801126131'
+      sourceHandle: 00eb1ca9-64f3-4263-b538-8c5a8ff5ec6d
+      target: '1751799633553'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: assigner
+      id: 1751798014831-source-1751808052853-target
+      source: '1751798014831'
+      sourceHandle: source
+      target: '1751808052853'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: assigner
+        targetType: answer
+      id: 1751808052853-source-1751800693593-target
+      source: '1751808052853'
+      sourceHandle: source
+      target: '1751800693593'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: agent
+        targetType: answer
+      id: 1751799633553-source-1751808109842-target
+      source: '1751799633553'
+      sourceHandle: source
+      target: '1751808109842'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: answer
+      id: 1751801126131-b03e6026-a955-4c9d-a1a5-ccb570316f01-1751808190606-target
+      source: '1751801126131'
+      sourceHandle: b03e6026-a955-4c9d-a1a5-ccb570316f01
+      target: '1751808190606'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: answer
+      id: 1751801126131-false-1751809090445-target
+      source: '1751801126131'
+      sourceHandle: 'false'
+      target: '1751809090445'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        desc: ''
+        selected: false
+        title: 开始
+        type: start
+        variables: []
+      height: 54
+      id: '1751725631878'
+      position:
+        x: -210.25409056436604
+        y: 282
+      positionAbsolute:
+        x: -210.25409056436604
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        is_team_authorization: true
+        output_schema: null
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: form
+          human_description:
+            en_US: platform name
+            ja_JP: platform name
+            pt_BR: platform name
+            zh_Hans: 平台名称
+          label:
+            en_US: platform
+            ja_JP: platform
+            pt_BR: platform
+            zh_Hans: 平台名称
+          llm_description: 平台名称
+          max: null
+          min: null
+          name: platform
+          options:
+          - label:
+              en_US: zhihu
+              ja_JP: zhihu
+              pt_BR: zhihu
+              zh_Hans: 知乎
+            value: zhihu
+          - label:
+              en_US: juejin
+              ja_JP: juejin
+              pt_BR: juejin
+              zh_Hans: 掘金
+            value: juejin
+          - label:
+              en_US: bilibili
+              ja_JP: bilibili
+              pt_BR: bilibili
+              zh_Hans: bilibili
+            value: bilibili
+          - label:
+              en_US: ac_fun
+              ja_JP: ac_fun
+              pt_BR: ac_fun
+              zh_Hans: ac_fun
+            value: acfun
+          - label:
+              en_US: weibo
+              ja_JP: weibo
+              pt_BR: weibo
+              zh_Hans: 微博
+            value: weibo
+          - label:
+              en_US: toutiao
+              ja_JP: toutiao
+              pt_BR: toutiao
+              zh_Hans: 今日头条
+            value: toutiao
+          - label:
+              en_US: 36kr
+              ja_JP: 36kr
+              pt_BR: 36kr
+              zh_Hans: 36kr
+            value: 36kr
+          - label:
+              en_US: huxiu
+              ja_JP: huxiu
+              pt_BR: huxiu
+              zh_Hans: 虎嗅
+            value: huxiu
+          - label:
+              en_US: hellogithub
+              ja_JP: hellogithub
+              pt_BR: hellogithub
+              zh_Hans: hellogithub
+            value: hellogithub
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: select
+        - auto_generate: null
+          default: null
+          form: form
+          human_description:
+            en_US: result number
+            ja_JP: result number
+            pt_BR: result number
+            zh_Hans: 返回结果数量
+          label:
+            en_US: result number
+            ja_JP: result number
+            pt_BR: result number
+            zh_Hans: 返回结果数量
+          llm_description: 返回结果数量
+          max: 10
+          min: 1
+          name: result_num
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: number
+        params:
+          platform: ''
+          result_num: ''
+        provider_id: jaguarliuu/rookie_rss/rookie_rss
+        provider_name: jaguarliuu/rookie_rss/rookie_rss
+        provider_type: builtin
+        selected: false
+        title: 掘金
+        tool_configurations:
+          platform: juejin
+          result_num: 5
+        tool_description: rookie rss 多平台新闻聚合插件
+        tool_label: rookie_rss
+        tool_name: rookie_rss
+        tool_parameters: {}
+        type: tool
+      height: 116
+      id: '1751725644838'
+      position:
+        x: 729.3380556366719
+        y: -242.61856823339775
+      positionAbsolute:
+        x: 729.3380556366719
+        y: -242.61856823339775
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        is_team_authorization: true
+        output_schema: null
+        paramSchemas:
+        - auto_generate: null
+          default: '%Y-%m-%d %H:%M:%S'
+          form: form
+          human_description:
+            en_US: Time format in strftime standard.
+            ja_JP: Time format in strftime standard.
+            pt_BR: Time format in strftime standard.
+            zh_Hans: strftime 标准的时间格式。
+          label:
+            en_US: Format
+            ja_JP: Format
+            pt_BR: Format
+            zh_Hans: 格式
+          llm_description: null
+          max: null
+          min: null
+          name: format
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: UTC
+          form: form
+          human_description:
+            en_US: Timezone
+            ja_JP: Timezone
+            pt_BR: Timezone
+            zh_Hans: 时区
+          label:
+            en_US: Timezone
+            ja_JP: Timezone
+            pt_BR: Timezone
+            zh_Hans: 时区
+          llm_description: null
+          max: null
+          min: null
+          name: timezone
+          options:
+          - label:
+              en_US: UTC
+              ja_JP: UTC
+              pt_BR: UTC
+              zh_Hans: UTC
+            value: UTC
+          - label:
+              en_US: America/New_York
+              ja_JP: America/New_York
+              pt_BR: America/New_York
+              zh_Hans: 美洲/纽约
+            value: America/New_York
+          - label:
+              en_US: America/Los_Angeles
+              ja_JP: America/Los_Angeles
+              pt_BR: America/Los_Angeles
+              zh_Hans: 美洲/洛杉矶
+            value: America/Los_Angeles
+          - label:
+              en_US: America/Chicago
+              ja_JP: America/Chicago
+              pt_BR: America/Chicago
+              zh_Hans: 美洲/芝加哥
+            value: America/Chicago
+          - label:
+              en_US: America/Sao_Paulo
+              ja_JP: America/Sao_Paulo
+              pt_BR: América/São Paulo
+              zh_Hans: 美洲/圣保罗
+            value: America/Sao_Paulo
+          - label:
+              en_US: Asia/Shanghai
+              ja_JP: Asia/Shanghai
+              pt_BR: Asia/Shanghai
+              zh_Hans: 亚洲/上海
+            value: Asia/Shanghai
+          - label:
+              en_US: Asia/Ho_Chi_Minh
+              ja_JP: Asia/Ho_Chi_Minh
+              pt_BR: Ásia/Ho Chi Minh
+              zh_Hans: 亚洲/胡志明市
+            value: Asia/Ho_Chi_Minh
+          - label:
+              en_US: Asia/Tokyo
+              ja_JP: Asia/Tokyo
+              pt_BR: Asia/Tokyo
+              zh_Hans: 亚洲/东京
+            value: Asia/Tokyo
+          - label:
+              en_US: Asia/Dubai
+              ja_JP: Asia/Dubai
+              pt_BR: Asia/Dubai
+              zh_Hans: 亚洲/迪拜
+            value: Asia/Dubai
+          - label:
+              en_US: Asia/Kolkata
+              ja_JP: Asia/Kolkata
+              pt_BR: Asia/Kolkata
+              zh_Hans: 亚洲/加尔各答
+            value: Asia/Kolkata
+          - label:
+              en_US: Asia/Seoul
+              ja_JP: Asia/Seoul
+              pt_BR: Asia/Seoul
+              zh_Hans: 亚洲/首尔
+            value: Asia/Seoul
+          - label:
+              en_US: Asia/Singapore
+              ja_JP: Asia/Singapore
+              pt_BR: Asia/Singapore
+              zh_Hans: 亚洲/新加坡
+            value: Asia/Singapore
+          - label:
+              en_US: Europe/London
+              ja_JP: Europe/London
+              pt_BR: Europe/London
+              zh_Hans: 欧洲/伦敦
+            value: Europe/London
+          - label:
+              en_US: Europe/Berlin
+              ja_JP: Europe/Berlin
+              pt_BR: Europe/Berlin
+              zh_Hans: 欧洲/柏林
+            value: Europe/Berlin
+          - label:
+              en_US: Europe/Moscow
+              ja_JP: Europe/Moscow
+              pt_BR: Europe/Moscow
+              zh_Hans: 欧洲/莫斯科
+            value: Europe/Moscow
+          - label:
+              en_US: Australia/Sydney
+              ja_JP: Australia/Sydney
+              pt_BR: Australia/Sydney
+              zh_Hans: 澳大利亚/悉尼
+            value: Australia/Sydney
+          - label:
+              en_US: Pacific/Auckland
+              ja_JP: Pacific/Auckland
+              pt_BR: Pacific/Auckland
+              zh_Hans: 太平洋/奥克兰
+            value: Pacific/Auckland
+          - label:
+              en_US: Africa/Cairo
+              ja_JP: Africa/Cairo
+              pt_BR: Africa/Cairo
+              zh_Hans: 非洲/开罗
+            value: Africa/Cairo
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: select
+        params:
+          format: ''
+          timezone: ''
+        provider_id: time
+        provider_name: time
+        provider_type: builtin
+        selected: false
+        title: 获取当前时间
+        tool_configurations:
+          format: '%Y-%m-%d'
+          timezone: Asia/Shanghai
+        tool_description: 一个用于获取当前时间的工具。
+        tool_label: 获取当前时间
+        tool_name: current_time
+        tool_parameters: {}
+        type: tool
+      height: 116
+      id: '1751794321702'
+      position:
+        x: 426.3380556366719
+        y: -242.61856823339775
+      positionAbsolute:
+        x: 426.3380556366719
+        y: -242.61856823339775
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        is_team_authorization: true
+        output_schema: null
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: form
+          human_description:
+            en_US: platform name
+            ja_JP: platform name
+            pt_BR: platform name
+            zh_Hans: 平台名称
+          label:
+            en_US: platform
+            ja_JP: platform
+            pt_BR: platform
+            zh_Hans: 平台名称
+          llm_description: 平台名称
+          max: null
+          min: null
+          name: platform
+          options:
+          - label:
+              en_US: zhihu
+              ja_JP: zhihu
+              pt_BR: zhihu
+              zh_Hans: 知乎
+            value: zhihu
+          - label:
+              en_US: juejin
+              ja_JP: juejin
+              pt_BR: juejin
+              zh_Hans: 掘金
+            value: juejin
+          - label:
+              en_US: bilibili
+              ja_JP: bilibili
+              pt_BR: bilibili
+              zh_Hans: bilibili
+            value: bilibili
+          - label:
+              en_US: ac_fun
+              ja_JP: ac_fun
+              pt_BR: ac_fun
+              zh_Hans: ac_fun
+            value: acfun
+          - label:
+              en_US: weibo
+              ja_JP: weibo
+              pt_BR: weibo
+              zh_Hans: 微博
+            value: weibo
+          - label:
+              en_US: toutiao
+              ja_JP: toutiao
+              pt_BR: toutiao
+              zh_Hans: 今日头条
+            value: toutiao
+          - label:
+              en_US: 36kr
+              ja_JP: 36kr
+              pt_BR: 36kr
+              zh_Hans: 36kr
+            value: 36kr
+          - label:
+              en_US: huxiu
+              ja_JP: huxiu
+              pt_BR: huxiu
+              zh_Hans: 虎嗅
+            value: huxiu
+          - label:
+              en_US: hellogithub
+              ja_JP: hellogithub
+              pt_BR: hellogithub
+              zh_Hans: hellogithub
+            value: hellogithub
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: select
+        - auto_generate: null
+          default: null
+          form: form
+          human_description:
+            en_US: result number
+            ja_JP: result number
+            pt_BR: result number
+            zh_Hans: 返回结果数量
+          label:
+            en_US: result number
+            ja_JP: result number
+            pt_BR: result number
+            zh_Hans: 返回结果数量
+          llm_description: 返回结果数量
+          max: 10
+          min: 1
+          name: result_num
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: number
+        params:
+          platform: ''
+          result_num: ''
+        provider_id: jaguarliuu/rookie_rss/rookie_rss
+        provider_name: jaguarliuu/rookie_rss/rookie_rss
+        provider_type: builtin
+        selected: false
+        title: 微博
+        tool_configurations:
+          platform: weibo
+          result_num: 5
+        tool_description: rookie rss 多平台新闻聚合插件
+        tool_label: rookie_rss
+        tool_name: rookie_rss
+        tool_parameters: {}
+        type: tool
+      height: 116
+      id: '1751795930848'
+      position:
+        x: 729.3380556366719
+        y: -87.61856823339775
+      positionAbsolute:
+        x: 729.3380556366719
+        y: -87.61856823339775
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        is_team_authorization: true
+        output_schema: null
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: form
+          human_description:
+            en_US: platform name
+            ja_JP: platform name
+            pt_BR: platform name
+            zh_Hans: 平台名称
+          label:
+            en_US: platform
+            ja_JP: platform
+            pt_BR: platform
+            zh_Hans: 平台名称
+          llm_description: 平台名称
+          max: null
+          min: null
+          name: platform
+          options:
+          - label:
+              en_US: zhihu
+              ja_JP: zhihu
+              pt_BR: zhihu
+              zh_Hans: 知乎
+            value: zhihu
+          - label:
+              en_US: juejin
+              ja_JP: juejin
+              pt_BR: juejin
+              zh_Hans: 掘金
+            value: juejin
+          - label:
+              en_US: bilibili
+              ja_JP: bilibili
+              pt_BR: bilibili
+              zh_Hans: bilibili
+            value: bilibili
+          - label:
+              en_US: ac_fun
+              ja_JP: ac_fun
+              pt_BR: ac_fun
+              zh_Hans: ac_fun
+            value: acfun
+          - label:
+              en_US: weibo
+              ja_JP: weibo
+              pt_BR: weibo
+              zh_Hans: 微博
+            value: weibo
+          - label:
+              en_US: toutiao
+              ja_JP: toutiao
+              pt_BR: toutiao
+              zh_Hans: 今日头条
+            value: toutiao
+          - label:
+              en_US: 36kr
+              ja_JP: 36kr
+              pt_BR: 36kr
+              zh_Hans: 36kr
+            value: 36kr
+          - label:
+              en_US: huxiu
+              ja_JP: huxiu
+              pt_BR: huxiu
+              zh_Hans: 虎嗅
+            value: huxiu
+          - label:
+              en_US: hellogithub
+              ja_JP: hellogithub
+              pt_BR: hellogithub
+              zh_Hans: hellogithub
+            value: hellogithub
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: select
+        - auto_generate: null
+          default: null
+          form: form
+          human_description:
+            en_US: result number
+            ja_JP: result number
+            pt_BR: result number
+            zh_Hans: 返回结果数量
+          label:
+            en_US: result number
+            ja_JP: result number
+            pt_BR: result number
+            zh_Hans: 返回结果数量
+          llm_description: 返回结果数量
+          max: 10
+          min: 1
+          name: result_num
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: number
+        params:
+          platform: ''
+          result_num: ''
+        provider_id: jaguarliuu/rookie_rss/rookie_rss
+        provider_name: jaguarliuu/rookie_rss/rookie_rss
+        provider_type: builtin
+        selected: false
+        title: 今日头条
+        tool_configurations:
+          platform: toutiao
+          result_num: 5
+        tool_description: rookie rss 多平台新闻聚合插件
+        tool_label: rookie_rss
+        tool_name: rookie_rss
+        tool_parameters: {}
+        type: tool
+      height: 116
+      id: '1751795945902'
+      position:
+        x: 729.3380556366719
+        y: 67.38143176660225
+      positionAbsolute:
+        x: 729.3380556366719
+        y: 67.38143176660225
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        is_team_authorization: true
+        output_schema: null
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: form
+          human_description:
+            en_US: platform name
+            ja_JP: platform name
+            pt_BR: platform name
+            zh_Hans: 平台名称
+          label:
+            en_US: platform
+            ja_JP: platform
+            pt_BR: platform
+            zh_Hans: 平台名称
+          llm_description: 平台名称
+          max: null
+          min: null
+          name: platform
+          options:
+          - label:
+              en_US: zhihu
+              ja_JP: zhihu
+              pt_BR: zhihu
+              zh_Hans: 知乎
+            value: zhihu
+          - label:
+              en_US: juejin
+              ja_JP: juejin
+              pt_BR: juejin
+              zh_Hans: 掘金
+            value: juejin
+          - label:
+              en_US: bilibili
+              ja_JP: bilibili
+              pt_BR: bilibili
+              zh_Hans: bilibili
+            value: bilibili
+          - label:
+              en_US: ac_fun
+              ja_JP: ac_fun
+              pt_BR: ac_fun
+              zh_Hans: ac_fun
+            value: acfun
+          - label:
+              en_US: weibo
+              ja_JP: weibo
+              pt_BR: weibo
+              zh_Hans: 微博
+            value: weibo
+          - label:
+              en_US: toutiao
+              ja_JP: toutiao
+              pt_BR: toutiao
+              zh_Hans: 今日头条
+            value: toutiao
+          - label:
+              en_US: 36kr
+              ja_JP: 36kr
+              pt_BR: 36kr
+              zh_Hans: 36kr
+            value: 36kr
+          - label:
+              en_US: huxiu
+              ja_JP: huxiu
+              pt_BR: huxiu
+              zh_Hans: 虎嗅
+            value: huxiu
+          - label:
+              en_US: hellogithub
+              ja_JP: hellogithub
+              pt_BR: hellogithub
+              zh_Hans: hellogithub
+            value: hellogithub
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: select
+        - auto_generate: null
+          default: null
+          form: form
+          human_description:
+            en_US: result number
+            ja_JP: result number
+            pt_BR: result number
+            zh_Hans: 返回结果数量
+          label:
+            en_US: result number
+            ja_JP: result number
+            pt_BR: result number
+            zh_Hans: 返回结果数量
+          llm_description: 返回结果数量
+          max: 10
+          min: 1
+          name: result_num
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: number
+        params:
+          platform: ''
+          result_num: ''
+        provider_id: jaguarliuu/rookie_rss/rookie_rss
+        provider_name: jaguarliuu/rookie_rss/rookie_rss
+        provider_type: builtin
+        selected: false
+        title: 36 氪
+        tool_configurations:
+          platform: 36kr
+          result_num: 5
+        tool_description: rookie rss 多平台新闻聚合插件
+        tool_label: rookie_rss
+        tool_name: rookie_rss
+        tool_parameters: {}
+        type: tool
+      height: 116
+      id: '1751795958498'
+      position:
+        x: 729.3380556366719
+        y: 232.25401988103653
+      positionAbsolute:
+        x: 729.3380556366719
+        y: 232.25401988103653
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        is_team_authorization: true
+        output_schema: null
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: form
+          human_description:
+            en_US: platform name
+            ja_JP: platform name
+            pt_BR: platform name
+            zh_Hans: 平台名称
+          label:
+            en_US: platform
+            ja_JP: platform
+            pt_BR: platform
+            zh_Hans: 平台名称
+          llm_description: 平台名称
+          max: null
+          min: null
+          name: platform
+          options:
+          - label:
+              en_US: zhihu
+              ja_JP: zhihu
+              pt_BR: zhihu
+              zh_Hans: 知乎
+            value: zhihu
+          - label:
+              en_US: juejin
+              ja_JP: juejin
+              pt_BR: juejin
+              zh_Hans: 掘金
+            value: juejin
+          - label:
+              en_US: bilibili
+              ja_JP: bilibili
+              pt_BR: bilibili
+              zh_Hans: bilibili
+            value: bilibili
+          - label:
+              en_US: ac_fun
+              ja_JP: ac_fun
+              pt_BR: ac_fun
+              zh_Hans: ac_fun
+            value: acfun
+          - label:
+              en_US: weibo
+              ja_JP: weibo
+              pt_BR: weibo
+              zh_Hans: 微博
+            value: weibo
+          - label:
+              en_US: toutiao
+              ja_JP: toutiao
+              pt_BR: toutiao
+              zh_Hans: 今日头条
+            value: toutiao
+          - label:
+              en_US: 36kr
+              ja_JP: 36kr
+              pt_BR: 36kr
+              zh_Hans: 36kr
+            value: 36kr
+          - label:
+              en_US: huxiu
+              ja_JP: huxiu
+              pt_BR: huxiu
+              zh_Hans: 虎嗅
+            value: huxiu
+          - label:
+              en_US: hellogithub
+              ja_JP: hellogithub
+              pt_BR: hellogithub
+              zh_Hans: hellogithub
+            value: hellogithub
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: select
+        - auto_generate: null
+          default: null
+          form: form
+          human_description:
+            en_US: result number
+            ja_JP: result number
+            pt_BR: result number
+            zh_Hans: 返回结果数量
+          label:
+            en_US: result number
+            ja_JP: result number
+            pt_BR: result number
+            zh_Hans: 返回结果数量
+          llm_description: 返回结果数量
+          max: 10
+          min: 1
+          name: result_num
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: number
+        params:
+          platform: ''
+          result_num: ''
+        provider_id: jaguarliuu/rookie_rss/rookie_rss
+        provider_name: jaguarliuu/rookie_rss/rookie_rss
+        provider_type: builtin
+        selected: false
+        title: 虎嗅
+        tool_configurations:
+          platform: huxiu
+          result_num: 5
+        tool_description: rookie rss 多平台新闻聚合插件
+        tool_label: rookie_rss
+        tool_name: rookie_rss
+        tool_parameters: {}
+        type: tool
+      height: 116
+      id: '1751795973013'
+      position:
+        x: 729.3380556366719
+        y: 377.38143176660225
+      positionAbsolute:
+        x: 729.3380556366719
+        y: 377.38143176660225
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        selected: false
+        template: "[\n  {\n    \"articles\": [\n      {% set json_list = [json1, json2,\
+          \ json3, json4, json5] %}\n      {% for idx in range(json_list | length)\
+          \ %}\n        {% set json = json_list[idx] %}\n        {% for article in\
+          \ json[0].articles %}\n      {\n        \"author\": \"{{ article.author\
+          \ | default('') }}\",\n        \"hot_score\": {{ article.hot_score | default(null)\
+          \ }},\n        \"id\": \"{{ article.id | default('') }}\",\n        \"links\"\
+          : {\n          \"mobile\": \"{{ article.links.mobile | default('') }}\"\
+          ,\n          \"pc\": \"{{ article.links.pc | default('') }}\"\n        },\n\
+          \        \"metadata\": {\n          \"list_type\": \"{{ article.metadata.list_type\
+          \ | default('') }}\",\n          \"platform\": \"{{ article.metadata.platform\
+          \ | default('') }}\",\n          \"update_time\": \"{{ article.metadata.update_time\
+          \ | default('') }}\"\n        },\n        \"rank\": {{ article.rank | default(0)\
+          \ }},\n        \"title\": \"{{ article.title | default('') }}\"\n      }{%\
+          \ if not (loop.last and idx == json_list | length - 1) %},{% endif %}\n\
+          \        {% endfor %}\n      {% endfor %}\n    ],\n    \"code\": 200,\n\
+          \    \"pagination\": {\n      \"returned\": {{ (json1[0].pagination.returned\
+          \ | default(0)) + (json2[0].pagination.returned | default(0)) + (json3[0].pagination.returned\
+          \ | default(0)) + (json4[0].pagination.returned | default(0)) + (json5[0].pagination.returned\
+          \ | default(0)) }},\n      \"total\": {{ (json1[0].pagination.total | default(0))\
+          \ + (json2[0].pagination.total | default(0)) + (json3[0].pagination.total\
+          \ | default(0)) + (json4[0].pagination.total | default(0)) + (json5[0].pagination.total\
+          \ | default(0)) }}\n    },\n    \"status\": \"success\"\n  }\n]"
+        title: 模板转换
+        type: template-transform
+        variables:
+        - value_selector:
+          - '1751725644838'
+          - json
+          variable: json1
+        - value_selector:
+          - '1751795930848'
+          - json
+          variable: json2
+        - value_selector:
+          - '1751795945902'
+          - json
+          variable: json3
+        - value_selector:
+          - '1751795958498'
+          - json
+          variable: json4
+        - value_selector:
+          - '1751795973013'
+          - json
+          variable: json5
+      height: 54
+      id: '1751796095503'
+      position:
+        x: 1015.3423579164569
+        y: -242.61856823339775
+      positionAbsolute:
+        x: 1015.3423579164569
+        y: -242.61856823339775
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "import json\nfrom datetime import datetime, timezone, timedelta\n\n\
+          def main(arg1: str) -> dict:\n    try:\n        # 平台映射字典\n        platform_map\
+          \ = {\n            'huxiu': '虎嗅',\n            'weibo': '微博',\n        \
+          \    'juejin': '掘金',\n            'toutiao': '头条',\n            '36kr':\
+          \ '36氪'\n        }\n\n        # 预处理输入字符串，将 None 替换为 null\n        arg1 =\
+          \ arg1.replace(\"None\", \"null\")\n\n        # 解析输入 JSON\n        if isinstance(arg1,\
+          \ (dict, list)):\n            parsed_data = arg1\n        else:\n      \
+          \      parsed_data = json.loads(arg1)\n\n        # 提取 articles 列表\n    \
+          \    if isinstance(parsed_data, dict) and \"arg1\" in parsed_data:\n   \
+          \         data = json.loads(parsed_data[\"arg1\"])  # 解析嵌套的 arg1 字符串\n \
+          \       else:\n            data = parsed_data\n\n        articles = []\n\
+          \        if isinstance(data, list):\n            for item in data:\n   \
+          \             articles.extend(item.get(\"articles\", []))\n        elif\
+          \ isinstance(data, dict):\n            articles = data.get(\"articles\"\
+          , [])\n\n        # 初始化 Markdown 表格\n        table_lines = [\n          \
+          \  \"| 标题 | PC 端链接 | 移动端链接 | 平台 | 热门评分 | 更新时间 |\",\n            \"| ---\
+          \ | --- | --- | --- | --- | --- |\"\n        ]\n\n        # 处理每篇文章\n   \
+          \     for item in articles:\n            title = item.get('title', '')\n\
+          \            links_pc = item.get('links', {}).get('pc', '')\n          \
+          \  links_mobile = item.get('links', {}).get('mobile', '')\n            platform\
+          \ = item.get('metadata', {}).get('platform', '')\n            # 映射平台名称\n\
+          \            platform = platform_map.get(platform, platform)  # 使用原始值作为默认\n\
+          \            # 处理 hot_score：如果为 None，设置为 \"No Score\"\n            hot_score\
+          \ = item.get('hot_score', 'No Score')\n            if hot_score is None:\n\
+          \                hot_score = 'No Score'\n            update_time_raw = item.get('metadata',\
+          \ {}).get('update_time', '')\n\n            # 处理更新时间\n            update_time\
+          \ = ''\n            if update_time_raw:\n                try:\n        \
+          \            # 尝试解析 ISO8601 带毫秒\n                    dt_utc = datetime.strptime(update_time_raw,\
+          \ \"%Y-%m-%dT%H:%M:%S.%fZ\")\n                    dt_utc = dt_utc.replace(tzinfo=timezone.utc)\n\
+          \                    shanghai_tz = timezone(timedelta(hours=8))\n      \
+          \              dt_shanghai = dt_utc.astimezone(shanghai_tz)\n          \
+          \          update_time = dt_shanghai.strftime(\"%Y-%m-%d %H:%M:%S\")\n \
+          \               except Exception:\n                    try:\n          \
+          \              # 尝试解析 ISO8601 不带毫秒\n                        dt_utc = datetime.strptime(update_time_raw,\
+          \ \"%Y-%m-%dT%H:%M:%SZ\")\n                        dt_utc = dt_utc.replace(tzinfo=timezone.utc)\n\
+          \                        shanghai_tz = timezone(timedelta(hours=8))\n  \
+          \                      dt_shanghai = dt_utc.astimezone(shanghai_tz)\n  \
+          \                      update_time = dt_shanghai.strftime(\"%Y-%m-%d %H:%M:%S\"\
+          )\n                    except Exception:\n                        try:\n\
+          \                            # 尝试解析时间戳\n                            ts =\
+          \ int(update_time_raw)\n                            if len(str(update_time_raw))\
+          \ == 13:\n                                ts = ts / 1000\n             \
+          \               dt = datetime.fromtimestamp(ts, tz=timezone.utc)\n     \
+          \                       dt_shanghai = dt.astimezone(timezone(timedelta(hours=8)))\n\
+          \                            update_time = dt_shanghai.strftime(\"%Y-%m-%d\
+          \ %H:%M:%S\")\n                        except Exception:\n             \
+          \               update_time = str(update_time_raw)\n\n            # 转义 Markdown\
+          \ 表格中的特殊字符\n            title = title.replace('|', '\\\\|')\n          \
+          \  platform = platform.replace('|', '\\\\|')\n            hot_score = str(hot_score).replace('|',\
+          \ '\\\\|')\n            # 转换为 Markdown 超链接格式\n            links_pc = f\"\
+          [点击查看]({links_pc})\" if links_pc else ''\n            links_mobile = f\"\
+          [点击查看]({links_mobile})\" if links_mobile else ''\n\n            # 添加表格行\n\
+          \            table_lines.append(\n                f\"| {title} | {links_pc}\
+          \ | {links_mobile} | {platform} | {hot_score} | {update_time} |\"\n    \
+          \        )\n\n        # 拼接 Markdown 表格\n        markdown_table = \"\\n\"\
+          .join(table_lines)\n        return {\"result\": markdown_table}\n\n    except\
+          \ Exception as e:\n        error_table = f\"| 错误 | 描述 |\\n| --- | --- |\\\
+          n| 错误 | {type(e).__name__}: {e} |\"\n        return {\"result\": error_table}"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: 代码执行 2
+        type: code
+        variables:
+        - value_selector:
+          - '1751796095503'
+          - output
+          variable: arg1
+      height: 54
+      id: '1751798014831'
+      position:
+        x: 1322.0408716708846
+        y: -242.61856823339775
+      positionAbsolute:
+        x: 1322.0408716708846
+        y: -242.61856823339775
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: '**今日热榜（{{#conversation.riqi#}}）**
+
+
+          {{#conversation.rebangbiaoge#}}'
+        desc: ''
+        selected: false
+        title: 直接回复 2
+        type: answer
+        variables: []
+      height: 124
+      id: '1751798276644'
+      position:
+        x: 451.61774417706533
+        y: 605.0509588917224
+      positionAbsolute:
+        x: 451.61774417706533
+        y: 605.0509588917224
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        agent_parameters:
+          instruction:
+            type: constant
+            value: '请根据输入的每日热榜，首先调用 JINA 按照PC端链接获取文章内容查看，然后根据文章标题和文章内容对热榜进行分类，如何分类由你判断，最后按类别输出热榜内容。
+
+
+              输出格式示例：
+
+              **今日热榜（2025-07-06）**
+
+              1. 科技类
+
+              | 标题 | PC 端链接 | 移动端链接 | 平台 | 热门评分 | 更新时间 |
+
+              | --- | --- | --- | --- | --- | --- |
+
+              |   xxx   |   xxx   |  xxx    |   xxx   |   xxx   |  xxx    |
+
+              |   xxx   |   xxx   |  xxx    |   xxx   |   xxx   |  xxx    |
+
+              |   xxx   |   xxx   |  xxx    |   xxx   |   xxx   |  xxx    |
+
+              2. 金融类
+
+              ...'
+          model:
+            type: constant
+            value:
+              completion_params: {}
+              mode: chat
+              model: deepseek-chat
+              model_type: llm
+              provider: langgenius/deepseek/deepseek
+              type: model-selector
+          query:
+            type: constant
+            value: '每日热榜：{{#conversation.rebangbiaoge#}}
+
+              今日日期：{{#conversation.riqi#}}'
+          tools:
+            type: constant
+            value:
+            - enabled: true
+              extra:
+                description: 获取目标网址（可以是 PDF），并将其转换为适合大模型处理的 Markdown 格式。
+              parameters:
+                request_params:
+                  auto: 1
+                  value: null
+                url:
+                  auto: 1
+                  value: null
+              provider_name: langgenius/jina_tool/jina
+              schemas:
+              - auto_generate: null
+                default: null
+                form: llm
+                human_description:
+                  en_US: Web link
+                  ja_JP: Web link
+                  pt_BR: URL da web
+                  zh_Hans: 网页链接
+                label:
+                  en_US: URL
+                  ja_JP: URL
+                  pt_BR: URL
+                  zh_Hans: 网址
+                llm_description: url para scraping
+                max: null
+                min: null
+                name: url
+                options: []
+                placeholder: null
+                precision: null
+                required: true
+                scope: null
+                template: null
+                type: string
+              - auto_generate: null
+                default: null
+                form: llm
+                human_description:
+                  en_US: 'request parameters, format: {"key1": "value1", "key2": "value2"}
+
+                    '
+                  ja_JP: 'request parameters, format: {"key1": "value1", "key2": "value2"}
+
+                    '
+                  pt_BR: 'parâmetros de solicitação, formato: {"key1": "value1", "key2":
+                    "value2"}
+
+                    '
+                  zh_Hans: '请求参数，格式：{"key1": "value1", "key2": "value2"}
+
+                    '
+                label:
+                  en_US: Request params
+                  ja_JP: Request params
+                  pt_BR: Parâmetros de solicitação
+                  zh_Hans: 请求参数
+                llm_description: request parameters
+                max: null
+                min: null
+                name: request_params
+                options: []
+                placeholder: null
+                precision: null
+                required: false
+                scope: null
+                template: null
+                type: string
+              - auto_generate: null
+                default: null
+                form: form
+                human_description:
+                  en_US: css selector for scraping specific elements
+                  ja_JP: css selector for scraping specific elements
+                  pt_BR: css selector para scraping de elementos específicos
+                  zh_Hans: css 选择器用于抓取特定元素
+                label:
+                  en_US: Target selector
+                  ja_JP: Target selector
+                  pt_BR: Seletor de destino
+                  zh_Hans: 目标选择器
+                llm_description: css selector of the target element to scrape
+                max: null
+                min: null
+                name: target_selector
+                options: []
+                placeholder: null
+                precision: null
+                required: false
+                scope: null
+                template: null
+                type: string
+              - auto_generate: null
+                default: null
+                form: form
+                human_description:
+                  en_US: css selector for waiting for specific elements
+                  ja_JP: css selector for waiting for specific elements
+                  pt_BR: css selector para aguardar elementos específicos
+                  zh_Hans: css 选择器用于等待特定元素
+                label:
+                  en_US: Wait for selector
+                  ja_JP: Wait for selector
+                  pt_BR: Aguardar por seletor
+                  zh_Hans: 等待选择器
+                llm_description: css selector of the target element to wait for
+                max: null
+                min: null
+                name: wait_for_selector
+                options: []
+                placeholder: null
+                precision: null
+                required: false
+                scope: null
+                template: null
+                type: string
+              - auto_generate: null
+                default: null
+                form: form
+                human_description:
+                  en_US: Remove all images from the response.
+                  ja_JP: Remove all images from the response.
+                  pt_BR: Remove all images from the response.
+                  zh_Hans: 从响应中删除所有图片。
+                label:
+                  en_US: Remove images
+                  ja_JP: Remove images
+                  pt_BR: Remove images
+                  zh_Hans: 删除图片
+                llm_description: Remove all images from the response
+                max: null
+                min: null
+                name: remove_images
+                options: []
+                placeholder: null
+                precision: null
+                required: false
+                scope: null
+                template: null
+                type: boolean
+              - auto_generate: null
+                default: 0
+                form: form
+                human_description:
+                  en_US: 'Captions all images at the specified URL, adding ''Image
+                    [idx]: [caption]'' as an alt tag for those without one. This allows
+                    downstream LLMs to interact with the images in activities such
+                    as reasoning and summarizing.'
+                  ja_JP: 'Captions all images at the specified URL, adding ''Image
+                    [idx]: [caption]'' as an alt tag for those without one. This allows
+                    downstream LLMs to interact with the images in activities such
+                    as reasoning and summarizing.'
+                  pt_BR: 'Adiciona legendas a todas as imagens na URL especificada,
+                    adicionando ''Imagem [idx]: [legenda]'' como uma tag alt para
+                    aquelas que não têm uma. Isso permite que os modelos LLM inferiores
+                    interajam com as imagens em atividades como raciocínio e resumo.'
+                  zh_Hans: '为指定 URL 上的所有图像添加标题，为没有标题的图像添加“Image [idx]: [caption]”作为
+                    alt 标签，以支持下游模型的图像交互。'
+                label:
+                  en_US: Image caption
+                  ja_JP: Image caption
+                  pt_BR: Legenda da imagem
+                  zh_Hans: 图片说明
+                llm_description: Captions all images at the specified URL
+                max: null
+                min: null
+                name: image_caption
+                options: []
+                placeholder: null
+                precision: null
+                required: false
+                scope: null
+                template: null
+                type: boolean
+              - auto_generate: null
+                default: 0
+                form: form
+                human_description:
+                  en_US: A "Buttons & Links" section will be created at the end. This
+                    helps the downstream LLMs or web agents navigating the page or
+                    take further actions.
+                  ja_JP: A "Buttons & Links" section will be created at the end. This
+                    helps the downstream LLMs or web agents navigating the page or
+                    take further actions.
+                  pt_BR: Um "Botões & Links" section will be created at the end. This
+                    helps the downstream LLMs or web agents navigating the page or
+                    take further actions.
+                  zh_Hans: 末尾将添加“按钮和链接”部分，方便下游模型或网络代理做页面导航或执行进一步操作。
+                label:
+                  en_US: Gather all links at the end
+                  ja_JP: Gather all links at the end
+                  pt_BR: Coletar todos os links ao final
+                  zh_Hans: 将所有链接集中到最后
+                llm_description: Gather all links at the end
+                max: null
+                min: null
+                name: gather_all_links_at_the_end
+                options: []
+                placeholder: null
+                precision: null
+                required: false
+                scope: null
+                template: null
+                type: boolean
+              - auto_generate: null
+                default: 0
+                form: form
+                human_description:
+                  en_US: An "Images" section will be created at the end. This gives
+                    the downstream LLMs an overview of all visuals on the page, which
+                    may improve reasoning.
+                  ja_JP: An "Images" section will be created at the end. This gives
+                    the downstream LLMs an overview of all visuals on the page, which
+                    may improve reasoning.
+                  pt_BR: Um "Imagens" section will be created at the end. This gives
+                    the downstream LLMs an overview of all visuals on the page, which
+                    may improve reasoning.
+                  zh_Hans: 末尾会新增“图片”部分，方便下游模型全面了解页面的视觉内容，提升推理效果。
+                label:
+                  en_US: Gather all images at the end
+                  ja_JP: Gather all images at the end
+                  pt_BR: Coletar todas as imagens ao final
+                  zh_Hans: 将所有图片集中到最后
+                llm_description: Gather all images at the end
+                max: null
+                min: null
+                name: gather_all_images_at_the_end
+                options: []
+                placeholder: null
+                precision: null
+                required: false
+                scope: null
+                template: null
+                type: boolean
+              - auto_generate: null
+                default: null
+                form: form
+                human_description:
+                  en_US: Use proxy to access URLs
+                  ja_JP: Use proxy to access URLs
+                  pt_BR: Use proxy to access URLs
+                  zh_Hans: 利用代理访问 URL
+                label:
+                  en_US: Proxy server
+                  ja_JP: Proxy server
+                  pt_BR: Servidor de proxy
+                  zh_Hans: 代理服务器
+                llm_description: Use proxy to access URLs
+                max: null
+                min: null
+                name: proxy_server
+                options: []
+                placeholder: null
+                precision: null
+                required: false
+                scope: null
+                template: null
+                type: string
+              - auto_generate: null
+                default: 0
+                form: form
+                human_description:
+                  en_US: Bypass the Cache
+                  ja_JP: Bypass the Cache
+                  pt_BR: Ignorar o cache
+                  zh_Hans: 是否绕过缓存
+                label:
+                  en_US: Bypass the Cache
+                  ja_JP: Bypass the Cache
+                  pt_BR: Ignorar o cache
+                  zh_Hans: 绕过缓存
+                llm_description: bypass the cache
+                max: null
+                min: null
+                name: no_cache
+                options: []
+                placeholder: null
+                precision: null
+                required: false
+                scope: null
+                template: null
+                type: boolean
+              - auto_generate: null
+                default: 0
+                form: form
+                human_description:
+                  en_US: When enabled, request results won't be cached on jina servers.
+                  ja_JP: When enabled, request results won't be cached on jina servers.
+                  pt_BR: When enabled, request results won't be cached on jina servers.
+                  zh_Hans: 启用后，请求结果将不会被缓存在 jina 服务器上。
+                label:
+                  en_US: Do Not Cache/Track
+                  ja_JP: Do Not Cache/Track
+                  pt_BR: Do Not Cache/Track
+                  zh_Hans: 请勿缓存/追踪
+                llm_description: Do Not Cache/Track
+                max: null
+                min: null
+                name: no_cache_track
+                options: []
+                placeholder: null
+                precision: null
+                required: false
+                scope: null
+                template: null
+                type: boolean
+              - auto_generate: null
+                default: 0
+                form: form
+                human_description:
+                  en_US: Enable summary for the output
+                  ja_JP: Enable summary for the output
+                  pt_BR: Habilitar resumo para a saída
+                  zh_Hans: 为输出启用摘要
+                label:
+                  en_US: Enable summary
+                  ja_JP: Enable summary
+                  pt_BR: Habilitar resumo
+                  zh_Hans: 是否启用摘要
+                llm_description: enable summary
+                max: null
+                min: null
+                name: summary
+                options: []
+                placeholder: null
+                precision: null
+                required: false
+                scope: null
+                template: null
+                type: boolean
+              - auto_generate: null
+                default: 3
+                form: form
+                human_description:
+                  en_US: Number of times to retry the request if it fails
+                  ja_JP: Number of times to retry the request if it fails
+                  pt_BR: Número de vezes para repetir a solicitação se falhar
+                  zh_Hans: 请求失败时重试的次数
+                label:
+                  en_US: Retry
+                  ja_JP: Retry
+                  pt_BR: Repetir
+                  zh_Hans: 重试
+                llm_description: Number of times to retry the request if it fails
+                max: null
+                min: null
+                name: max_retries
+                options: []
+                placeholder: null
+                precision: null
+                required: false
+                scope: null
+                template: null
+                type: number
+              settings:
+                gather_all_images_at_the_end:
+                  value: 0
+                gather_all_links_at_the_end:
+                  value: 0
+                image_caption:
+                  value: 0
+                max_retries:
+                  value: 3
+                no_cache:
+                  value: 0
+                no_cache_track:
+                  value: 0
+                proxy_server:
+                  value: null
+                remove_images:
+                  value: null
+                summary:
+                  value: 0
+                target_selector:
+                  value: null
+                wait_for_selector:
+                  value: null
+              tool_description: 获取目标网址（可以是 PDF），并将其转换为适合大模型处理的 Markdown 格式。
+              tool_label: 获取单页面
+              tool_name: jina_reader
+              type: builtin
+        agent_strategy_label: FunctionCalling
+        agent_strategy_name: function_calling
+        agent_strategy_provider_name: langgenius/agent/agent
+        desc: ''
+        output_schema: null
+        plugin_unique_identifier: langgenius/agent:0.0.15@3cb96179914f8c4025282bcb1cc2fd5a951f6be0877567b02daee01e28ca4bf3
+        selected: false
+        title: Agent
+        type: agent
+      height: 198
+      id: '1751799633553'
+      position:
+        x: 451.61774417706533
+        y: 784.6336629870898
+      positionAbsolute:
+        x: 451.61774417706533
+        y: 784.6336629870898
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: '今日热榜内容已搜集完毕，请选择输出方式：
+
+
+          1. 直接输出热榜内容
+
+          2. 让大模型帮忙做一下分类展示
+
+
+          请在输入框中输入 **1** 或 **2**（其他输入无效）。'
+        desc: ''
+        selected: false
+        title: 直接回复 2
+        type: answer
+        variables: []
+      height: 166
+      id: '1751800693593'
+      position:
+        x: 1922.4497370890676
+        y: -242.61856823339775
+      positionAbsolute:
+        x: 1922.4497370890676
+        y: -242.61856823339775
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: '='
+            id: 790bf42e-4732-42f5-9e71-4002086cf3f3
+            value: '0'
+            varType: number
+            variable_selector:
+            - sys
+            - dialogue_count
+          id: 'true'
+          logical_operator: and
+        - case_id: 91104c1d-165f-4f46-9426-accd7bf841ab
+          conditions:
+          - comparison_operator: '='
+            id: 2ed03905-fb8f-4ec6-b22b-94e5bf892c83
+            value: '1'
+            varType: number
+            variable_selector:
+            - sys
+            - dialogue_count
+          - comparison_operator: contains
+            id: fdb03605-3684-475f-9a06-9c9d393b114e
+            value: '1'
+            varType: string
+            variable_selector:
+            - sys
+            - query
+          id: 91104c1d-165f-4f46-9426-accd7bf841ab
+          logical_operator: and
+        - case_id: 00eb1ca9-64f3-4263-b538-8c5a8ff5ec6d
+          conditions:
+          - comparison_operator: '='
+            id: cb30cd7b-fadd-43cd-b24a-432ba84f6144
+            value: '1'
+            varType: number
+            variable_selector:
+            - sys
+            - dialogue_count
+          - comparison_operator: contains
+            id: 33e10071-aee9-4c07-852c-f7d21d375b93
+            value: '2'
+            varType: string
+            variable_selector:
+            - sys
+            - query
+          id: 00eb1ca9-64f3-4263-b538-8c5a8ff5ec6d
+          logical_operator: and
+        - case_id: b03e6026-a955-4c9d-a1a5-ccb570316f01
+          conditions:
+          - comparison_operator: ≥
+            id: b310ca56-c1fe-439e-89ad-341f3007987b
+            value: '2'
+            varType: number
+            variable_selector:
+            - sys
+            - dialogue_count
+          id: b03e6026-a955-4c9d-a1a5-ccb570316f01
+          logical_operator: and
+        desc: ''
+        selected: false
+        title: 条件分支
+        type: if-else
+      height: 322
+      id: '1751801126131'
+      position:
+        x: 82.18857734232648
+        y: 282
+      positionAbsolute:
+        x: 82.18857734232648
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        items:
+        - input_type: variable
+          operation: over-write
+          value:
+          - '1751798014831'
+          - result
+          variable_selector:
+          - conversation
+          - rebangbiaoge
+          write_mode: over-write
+        selected: false
+        title: 变量赋值
+        type: assigner
+        version: '2'
+      height: 88
+      id: '1751807381236'
+      position:
+        x: 1622.0514836432183
+        y: -242.61856823339775
+      positionAbsolute:
+        x: 1622.0514836432183
+        y: -242.61856823339775
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        items:
+        - input_type: variable
+          operation: over-write
+          value:
+          - '1751794321702'
+          - text
+          variable_selector:
+          - conversation
+          - riqi
+          write_mode: over-write
+        selected: false
+        title: 变量赋值 2
+        type: assigner
+        version: '2'
+      height: 88
+      id: '1751808052853'
+      position:
+        x: 1622.0514836432183
+        y: -115.61856823339775
+      positionAbsolute:
+        x: 1622.0514836432183
+        y: -115.61856823339775
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: '{{#1751799633553.text#}}'
+        desc: ''
+        selected: false
+        title: 直接回复 3
+        type: answer
+        variables: []
+      height: 105
+      id: '1751808109842'
+      position:
+        x: 755.6177441770653
+        y: 784.6336629870898
+      positionAbsolute:
+        x: 755.6177441770653
+        y: 784.6336629870898
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: 本次热榜查询服务已结束，如有需要，请重新开始对话～
+        desc: ''
+        selected: false
+        title: 直接回复 4
+        type: answer
+        variables: []
+      height: 118
+      id: '1751808190606'
+      position:
+        x: 451.61774417706533
+        y: 1055.4876151963203
+      positionAbsolute:
+        x: 451.61774417706533
+        y: 1055.4876151963203
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: 输入有误，请重新开始对话～
+        desc: ''
+        selected: false
+        title: 直接回复 5
+        type: answer
+        variables: []
+      height: 102
+      id: '1751809090445'
+      position:
+        x: 451.61774417706533
+        y: 1212.4876151963203
+      positionAbsolute:
+        x: 451.61774417706533
+        y: 1212.4876151963203
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    viewport:
+      x: 128.01715312393208
+      y: -156.83132560767547
+      zoom: 0.9134704290359679
